@@ -1,3 +1,4 @@
 import AppButton from "./AppButton";
+import AppLoadingButton from "./AppLoadingButton";
 
-export { AppButton };
+export { AppLoadingButton, AppButton };
