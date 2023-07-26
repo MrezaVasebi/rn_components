@@ -1,0 +1,1 @@
+export { handleIcons } from "./handleIcons";
