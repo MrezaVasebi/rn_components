@@ -1,4 +1,4 @@
-import { Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 import { appColors } from "../utils";
 
 export const handleIcons = (name: string, size: number | undefined, color: string | undefined): JSX.Element | null => {
@@ -8,6 +8,9 @@ export const handleIcons = (name: string, size: number | undefined, color: strin
    switch (name) {
       case "check": {
          return <Entypo name="check" size={size} color={color} />;
+      }
+      case "close": {
+         return <AntDesign name="close" size={size} color={color} />;
       }
       default:
          return null;
