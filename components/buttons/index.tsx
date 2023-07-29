@@ -1,5 +1,7 @@
 import AppButton from "./AppButton";
 import AppLoadingButton from "./AppLoadingButton";
 import RadioButton from "./RadioButton";
+import CheckBoxButton from "./CheckBoxButton";
+import TabButton from "./TabButton";
 
-export { RadioButton, AppLoadingButton, AppButton };
+export { TabButton, CheckBoxButton, RadioButton, AppLoadingButton, AppButton };
