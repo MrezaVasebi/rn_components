@@ -16,7 +16,7 @@ interface ICheckBoxButton {
 }
 
 const CheckBoxButton = (props: ICheckBoxButton) => {
-   let { iconColor = appColors.red, iconName = "check", iconSize = 13 } = props;
+   let { iconColor = appColors.red, iconName = "check", iconSize = 18 } = props;
 
    return (
       <TouchableOpacity activeOpacity={0.5} onPress={props.onPress} style={{ ...styles.btnStyle, ...props.btnStyle }}>
