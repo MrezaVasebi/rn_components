@@ -5,5 +5,7 @@ import CheckBoxButton from "./CheckBoxButton";
 import TabButton from "./TabButton";
 import ThreeTabButton from "./ThreeTabButton";
 import ChoosingModalButton from "./ChoosingModalButton";
+import IconButton from "./IconButton";
+import SwitchButton from "./SwitchButton";
 
-export { ChoosingModalButton, ThreeTabButton, TabButton, CheckBoxButton, RadioButton, AppLoadingButton, AppButton };
+export { IconButton, SwitchButton, ChoosingModalButton, ThreeTabButton, TabButton, CheckBoxButton, RadioButton, AppLoadingButton, AppButton };
