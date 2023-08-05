@@ -3,8 +3,8 @@ import React from "react";
 import { appColors } from "../../utils";
 
 interface IAppText {
-   label: string;
    lblStyle?: {};
+   label: string | undefined;
 }
 
 const AppText = (props: IAppText) => {

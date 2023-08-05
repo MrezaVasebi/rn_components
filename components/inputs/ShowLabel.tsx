@@ -2,9 +2,9 @@ import React from "react";
 import { AppText } from "../texts";
 
 interface IShowLabel {
-   label: string;
    lblStyle?: {};
    isLabelShow?: boolean;
+   label: string | undefined;
 }
 
 const ShowLabel = (props: IShowLabel) => {
