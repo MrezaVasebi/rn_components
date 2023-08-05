@@ -4,5 +4,6 @@ import SecureInput from "./SecureInput";
 import ShowLabel from "./ShowLabel";
 import InputWithClearButton from "./InputWithClearButton";
 import TwoFloorInputs from "./TwoFloorInputs";
+import InputWithIcon from "./InputWithIcon";
 
-export { TwoFloorInputs, InputWithClearButton, ShowLabel, SimpleInput, InputWithLabel, SecureInput };
+export { InputWithIcon, TwoFloorInputs, InputWithClearButton, ShowLabel, SimpleInput, InputWithLabel, SecureInput };
