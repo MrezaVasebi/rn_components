@@ -1,1 +1,3 @@
-export { handleIcons } from "./handleIcons";
+export * from "./handleIcons";
+export * from "./numberWithComma";
+export * from "./queryBuilder";
