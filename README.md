@@ -19,5 +19,5 @@ Components are divided into 3 sections:
 (AppSpinner, FooterLoading, Itemseparator, ...)
 
 _I try to add some new components to the project._
-_You can clone and use it._
+_You can clone and use it.___
 _Thanks_
