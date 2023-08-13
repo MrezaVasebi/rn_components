@@ -13,7 +13,7 @@ Components are divided into 3 sections:
 
 **Buttons include:**
 
->_(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconBtton, RadioButton, SwitchButton, TabButton, ThreeTabButton)_
+>_(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconBtton, RadioButton, SwitchButton, TabButton, ThreeTabButton, LineTabButton)_
 
 **Inputs include:**
 
