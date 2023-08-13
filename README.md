@@ -1,4 +1,5 @@
 # mb-components
+
 **react-native components which are written with typescript and react-native library.**
 
 Components are divided into 3 sections:
@@ -13,19 +14,19 @@ Components are divided into 3 sections:
 
 **Buttons include:**
 
->_(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconBtton, RadioButton, SwitchButton, TabButton, ThreeTabButton, LineTabButton)_
+> _(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconButton, RadioButton, SwitchButton, TabButton, ThreeTabButton, LineTabButton)_
 
 **Inputs include:**
 
->_(InputWithClearButton, InputWithIcon, InputWithLabel, SecureInput, SimpleInput, TwoFloorInputs)_
+> _(InputWithClearButton, InputWithIcon, InputWithLabel, SecureInput, SimpleInput, TwoFloorInputs)_
 
 **Texts include:**
 
->_(AppText, AppTitle)_
+> _(AppText, AppTitle)_
 
 **Others include:**
 
->_(AppSpinner, FooterLoading, Itemseparator, ...)_
+> _(AppSpinner, FooterLoading, ItemSeparator, ...)_
 
 _I try to add some new components to the project._
 
