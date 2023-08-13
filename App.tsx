@@ -1,6 +1,6 @@
 import React from "react";
-import { RootScreen } from "./components";
 import { StyleSheet } from "react-native";
+import { RootScreen } from "./components";
 import { appMargin } from "./utils";
 
 const App = () => {
