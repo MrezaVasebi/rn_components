@@ -8,5 +8,5 @@ export const appColors = {
    orange: "#FF8551",
    purple: "#461959",
    yellow: "#F2BE22",
-   lightGrey: "#F6F4EB",
+   lightGrey: "#D8D9DA",
 };

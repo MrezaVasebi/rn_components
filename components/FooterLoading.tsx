@@ -1,17 +1,17 @@
-import { StyleSheet, View } from "react-native";
 import React from "react";
+import { StyleSheet, View } from "react-native";
 import AppSpinner from "./AppSpinner";
 
 interface IFooterLoading {
    rootStyle?: {};
    color?: string;
-   isLoading: boolean;
+   isLoading?: boolean;
    size?: "small" | "large" | number;
 }
 
 const FooterLoading = (props: IFooterLoading) => {
    let { color, size, isLoading, rootStyle } = props;
-   return <View style={{ ...styles.rootStyle, ...rootStyle }}>{isLoading && <AppSpinner size={size} color={color} />}</View>;
+   return <View style={{ ...styles.rootStyle, ...rootStyle }}>{isLoading ? <AppSpinner size={size} color={color} /> : null}</View>;
 };
 
 export default FooterLoading;
