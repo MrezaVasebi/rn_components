@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text } from "react-native";
 
 const AppTextPlus = (props: Text["props"]) => {
-   return <Text {...props} style={[styles.lblStyle, props.style]} />;
+  return <Text {...props} style={[styles.lblStyle, props.style]} />;
 };
 
 // const AppTextPlus = ({ children }: { children: Text["props"]["children"] }) => {
@@ -16,5 +16,5 @@ const AppTextPlus = (props: Text["props"]) => {
 export default AppTextPlus;
 
 const styles = StyleSheet.create({
-   lblStyle: {},
+  lblStyle: {},
 });

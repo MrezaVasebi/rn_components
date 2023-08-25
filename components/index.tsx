@@ -4,7 +4,16 @@ import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
 import NoData from "./NoData";
 import RootScreen from "./RootScreen";
-import WrapIcon from "./WrapIcon";
 import RowItem from "./RowItem";
+import WrapIcon from "./WrapIcon";
 
-export { AppFlatList, AppSpinner, FooterLoading, ItemSeparator, NoData, RootScreen, WrapIcon, RowItem };
+export {
+  AppFlatList,
+  AppSpinner,
+  FooterLoading,
+  ItemSeparator,
+  NoData,
+  RootScreen,
+  RowItem,
+  WrapIcon,
+};
