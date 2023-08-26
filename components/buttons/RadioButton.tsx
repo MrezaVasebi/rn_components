@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
@@ -35,7 +35,7 @@ const RadioButton = (props: IRadioButtonProps) => {
   );
 };
 
-export default RadioButton;
+export default memo(RadioButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

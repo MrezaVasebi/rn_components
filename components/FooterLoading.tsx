@@ -18,7 +18,7 @@ const FooterLoading = (props: IFooterLoading) => {
   );
 };
 
-export default FooterLoading;
+export default React.memo(FooterLoading);
 
 const styles = StyleSheet.create({
   rootStyle: {},

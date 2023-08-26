@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
@@ -55,7 +55,7 @@ const InputWithIcon = (props: IInputWithIcon) => {
   );
 };
 
-export default InputWithIcon;
+export default memo(InputWithIcon);
 
 const styles = StyleSheet.create({
   root: {

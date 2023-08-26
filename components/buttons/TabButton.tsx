@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
@@ -62,7 +62,7 @@ const TabButton = (props: ITabButton) => {
   );
 };
 
-export default TabButton;
+export default memo(TabButton);
 
 const styles = StyleSheet.create({
   rootStyle: {

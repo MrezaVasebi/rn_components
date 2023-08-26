@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { AppText } from "../texts";
 import SimpleInput from "./SimpleInput";
@@ -40,7 +40,7 @@ const InputWithLabel = (props: IInputWithLabel) => {
   );
 };
 
-export default InputWithLabel;
+export default memo(InputWithLabel);
 
 const styles = StyleSheet.create({
   root: {},

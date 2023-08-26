@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
@@ -24,7 +24,7 @@ const IconButton = (props: IIconButton) => {
   );
 };
 
-export default IconButton;
+export default memo(IconButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

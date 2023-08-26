@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
@@ -83,7 +83,7 @@ const ThreeTabButton = (props: ITabButton) => {
   );
 };
 
-export default ThreeTabButton;
+export default memo(ThreeTabButton);
 
 const styles = StyleSheet.create({
   rootStyle: {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { appRadius } from "../../utils";
 import AppSpinner from "../AppSpinner";
@@ -35,7 +35,7 @@ const AppLoadingButton = (props: IAppLoadingButton) => {
   );
 };
 
-export default AppLoadingButton;
+export default memo(AppLoadingButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

@@ -23,7 +23,7 @@ const RowItem = (props: IRowItem) => {
   );
 };
 
-export default RowItem;
+export default React.memo(RowItem);
 
 const styles = StyleSheet.create({
   root: {

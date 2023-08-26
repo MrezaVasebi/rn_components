@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TextInput } from "react-native";
 import { appColors, appPadding, appRadius } from "../../utils";
 
@@ -23,7 +23,7 @@ const SimpleInput = (props: ISimpleInput) => {
   );
 };
 
-export default SimpleInput;
+export default memo(SimpleInput);
 
 const styles = StyleSheet.create({
   inputStyle: {

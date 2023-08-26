@@ -15,7 +15,7 @@ const RootScreen = (props: IRootScreenProps) => {
   );
 };
 
-export default RootScreen;
+export default React.memo(RootScreen);
 
 const styles = StyleSheet.create({
   rootStyle: {

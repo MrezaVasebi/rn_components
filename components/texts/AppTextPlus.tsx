@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, Text } from "react-native";
 
 const AppTextPlus = (props: Text["props"]) => {
@@ -13,7 +13,7 @@ const AppTextPlus = (props: Text["props"]) => {
 //    return <Text children={children} />;
 // };
 
-export default AppTextPlus;
+export default memo(AppTextPlus);
 
 const styles = StyleSheet.create({
   lblStyle: {},

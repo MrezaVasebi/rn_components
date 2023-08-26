@@ -17,7 +17,7 @@ const WrapIcon = ({ iconName, size, color, rootStyle }: IWrapIcon) => {
   );
 };
 
-export default WrapIcon;
+export default React.memo(WrapIcon);
 
 const styles = StyleSheet.create({
   root: {},

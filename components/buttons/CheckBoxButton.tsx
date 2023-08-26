@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors } from "../../utils";
 import WrapIcon from "../WrapIcon";
@@ -38,7 +38,7 @@ const CheckBoxButton = (props: ICheckBoxButton) => {
   );
 };
 
-export default CheckBoxButton;
+export default memo(CheckBoxButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

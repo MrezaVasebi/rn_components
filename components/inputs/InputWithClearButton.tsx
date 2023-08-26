@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { handleIcons } from "../../modules";
 import { appColors, appRadius } from "../../utils";
@@ -50,7 +50,7 @@ const InputWithClearButton = (props: IInputWithClearButton) => {
   );
 };
 
-export default InputWithClearButton;
+export default memo(InputWithClearButton);
 
 const styles = StyleSheet.create({
   root: {},

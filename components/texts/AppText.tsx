@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, Text } from "react-native";
 import { appColors } from "../../utils";
 
@@ -16,7 +16,7 @@ const AppText = (props: IAppText) => {
   );
 };
 
-export default AppText;
+export default memo(AppText);
 
 const styles = StyleSheet.create({
   lblStyle: {

@@ -17,7 +17,7 @@ const NoData = (props: INoData) => {
   );
 };
 
-export default NoData;
+export default React.memo(NoData);
 
 const styles = StyleSheet.create({
   root: {

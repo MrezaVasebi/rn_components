@@ -10,4 +10,4 @@ const ItemSeparator = (props: IItemSeparator) => {
   return <View style={{ height }} />;
 };
 
-export default ItemSeparator;
+export default React.memo(ItemSeparator);

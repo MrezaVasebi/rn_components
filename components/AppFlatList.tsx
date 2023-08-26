@@ -35,7 +35,7 @@ const AppFlatList = ({
   );
 };
 
-export default AppFlatList;
+export default React.memo(AppFlatList);
 
 const styles = StyleSheet.create({
   contentStyle: {},

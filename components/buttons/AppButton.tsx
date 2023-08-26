@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { appRadius } from "../../utils";
 import { AppText } from "../texts";
@@ -24,7 +24,7 @@ const AppButton = (props: IAppButton) => {
   );
 };
 
-export default AppButton;
+export default memo(AppButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

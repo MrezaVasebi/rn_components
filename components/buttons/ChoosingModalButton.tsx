@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
@@ -46,7 +46,7 @@ const ChoosingModalButton = (props: IChoosingModalButton) => {
   );
 };
 
-export default ChoosingModalButton;
+export default memo(ChoosingModalButton);
 
 const styles = StyleSheet.create({
   rootStyle: {},

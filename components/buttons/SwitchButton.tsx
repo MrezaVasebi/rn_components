@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 
@@ -26,7 +26,7 @@ const SwitchButton = (props: ISwitchButton) => {
   );
 };
 
-export default SwitchButton;
+export default memo(SwitchButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

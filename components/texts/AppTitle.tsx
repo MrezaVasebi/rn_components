@@ -18,7 +18,7 @@ const AppTitle = (props: IAppTitleProps) => {
   );
 };
 
-export default AppTitle;
+export default React.memo(AppTitle);
 
 const styles = StyleSheet.create({
   lblStyle: {

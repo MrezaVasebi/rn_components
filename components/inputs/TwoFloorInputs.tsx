@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import ShowLabel from "./ShowLabel";
@@ -64,7 +64,7 @@ const TwoFloorInputs = (props: ITwoFloorInput) => {
   );
 };
 
-export default TwoFloorInputs;
+export default memo(TwoFloorInputs);
 
 const styles = StyleSheet.create({
   root: {

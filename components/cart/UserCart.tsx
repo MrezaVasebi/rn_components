@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { IAddress, IUser } from "../../dummy/userDataType";
 import { appColors, appPadding, appRadius } from "../../utils";
@@ -70,7 +70,7 @@ const UserCart = (props: IUSerCart) => {
   );
 };
 
-export default UserCart;
+export default memo(UserCart);
 
 const styles = StyleSheet.create({
   root: {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { AppText } from "../texts";
 
 interface IShowLabel {
@@ -16,4 +16,4 @@ const ShowLabel = (props: IShowLabel) => {
   ) : null;
 };
 
-export default ShowLabel;
+export default memo(ShowLabel);

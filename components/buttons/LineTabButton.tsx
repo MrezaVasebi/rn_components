@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
@@ -70,7 +70,7 @@ const LineTabButton = (props: ILineTabButton) => {
   );
 };
 
-export default LineTabButton;
+export default memo(LineTabButton);
 
 const styles = StyleSheet.create({
   root: {

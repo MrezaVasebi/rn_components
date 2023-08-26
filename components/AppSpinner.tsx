@@ -12,4 +12,4 @@ const AppSpinner = (props: IAppSpinner) => {
   return <ActivityIndicator animating={true} color={color} size={size} />;
 };
 
-export default AppSpinner;
+export default React.memo(AppSpinner);
