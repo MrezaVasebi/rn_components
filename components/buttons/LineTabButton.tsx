@@ -1,7 +1,8 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface ILineTabButton {
   root?: object;
@@ -26,8 +27,7 @@ const Btn = (props: IBtn) => {
   let { label, tabName, onPress, btnStyle, lblStyle } = props;
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.5}
+    <ButtonWrapper
       onPress={onPress}
       style={{
         ...styles.btnStyle,
@@ -36,7 +36,7 @@ const Btn = (props: IBtn) => {
       }}
     >
       <AppText label={label} lblStyle={{ ...styles.lblStyle, ...lblStyle }} />
-    </TouchableOpacity>
+    </ButtonWrapper>
   );
 };
 

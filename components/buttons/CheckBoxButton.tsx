@@ -1,8 +1,9 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { appColors } from "../../utils";
 import WrapIcon from "../WrapIcon";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface ICheckBoxButton {
   lblStyle?: {};
@@ -19,8 +20,7 @@ const CheckBoxButton = (props: ICheckBoxButton) => {
   let { iconColor = appColors.red, iconName = "check", iconSize = 18 } = props;
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.5}
+    <ButtonWrapper
       onPress={props.onPress}
       style={{ ...styles.btnStyle, ...props.btnStyle }}
     >
@@ -34,7 +34,7 @@ const CheckBoxButton = (props: ICheckBoxButton) => {
         label={props.label}
         lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
       />
-    </TouchableOpacity>
+    </ButtonWrapper>
   );
 };
 

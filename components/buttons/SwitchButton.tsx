@@ -1,6 +1,7 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface ISwitchButton {
   btnStyle?: {};
@@ -16,13 +17,12 @@ const SwitchButton = (props: ISwitchButton) => {
   else style = { left: 5, backgroundColor: appColors.white };
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.5}
+    <ButtonWrapper
       onPress={onPress}
       style={{ ...styles.btnStyle, ...btnStyle }}
     >
       <View style={{ ...styles.circleStyle, ...style }} />
-    </TouchableOpacity>
+    </ButtonWrapper>
   );
 };
 

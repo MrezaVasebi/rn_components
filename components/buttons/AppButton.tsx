@@ -1,7 +1,8 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { appRadius } from "../../utils";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface IAppButton {
   label: string;
@@ -13,14 +14,13 @@ interface IAppButton {
 const AppButton = (props: IAppButton) => {
   let { label, btnStyle, lblStyle, onPress, ...rest } = props;
   return (
-    <TouchableOpacity
-      {...rest}
-      style={{ ...styles.btnStyle, ...btnStyle }}
+    <ButtonWrapper
       onPress={onPress}
-      activeOpacity={0.5}
+      style={{ ...styles.btnStyle, ...btnStyle }}
+      {...rest}
     >
       <AppText label={label} lblStyle={lblStyle} />
-    </TouchableOpacity>
+    </ButtonWrapper>
   );
 };
 

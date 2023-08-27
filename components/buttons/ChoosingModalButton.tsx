@@ -1,8 +1,9 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface IChoosingModalButton {
   label: string;
@@ -24,22 +25,20 @@ const ChoosingModalButton = (props: IChoosingModalButton) => {
       />
 
       <View style={{ ...styles.innerStyle, ...props.innerStyle }}>
-        <TouchableOpacity
-          activeOpacity={0.5}
+        <ButtonWrapper
           onPress={props.onPressShowModal}
           style={styles.showModalStyle}
         >
           <AppText label={props.selectedLabel} />
-        </TouchableOpacity>
+        </ButtonWrapper>
 
         {props.selectedLabel !== props.placeHolder && (
-          <TouchableOpacity
-            activeOpacity={0.5}
+          <ButtonWrapper
             onPress={props.onDeleteValue}
             style={styles.deleteStyle}
           >
             <WrapIcon iconName="close" size={20} />
-          </TouchableOpacity>
+          </ButtonWrapper>
         )}
       </View>
     </View>

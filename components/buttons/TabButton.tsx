@@ -1,7 +1,8 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface ITabButton {
   rootStyle?: {};
@@ -22,9 +23,8 @@ interface ITabs {
 const TabButton = (props: ITabButton) => {
   const Tabs = (props: ITabs) => {
     return (
-      <TouchableOpacity
+      <ButtonWrapper
         onPress={props.onPress}
-        activeOpacity={0.5}
         style={{
           ...styles.tabStyle,
           backgroundColor:
@@ -39,7 +39,7 @@ const TabButton = (props: ITabButton) => {
               props.label === props.tabName ? appColors.white : appColors.red,
           }}
         />
-      </TouchableOpacity>
+      </ButtonWrapper>
     );
   };
 

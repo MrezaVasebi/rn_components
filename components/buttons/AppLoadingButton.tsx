@@ -1,8 +1,9 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { appRadius } from "../../utils";
 import AppSpinner from "../AppSpinner";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface IAppLoadingButton {
   label: string;
@@ -17,10 +18,9 @@ interface IAppLoadingButton {
 
 const AppLoadingButton = (props: IAppLoadingButton) => {
   return (
-    <TouchableOpacity
+    <ButtonWrapper
       disabled={props.disabled}
       onPress={props.onPress}
-      activeOpacity={0.5}
       style={{ ...styles.btnStyle, ...props.btnStyle }}
     >
       {props.loading ? (
@@ -31,7 +31,7 @@ const AppLoadingButton = (props: IAppLoadingButton) => {
           lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
         />
       )}
-    </TouchableOpacity>
+    </ButtonWrapper>
   );
 };
 

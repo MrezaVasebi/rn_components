@@ -1,7 +1,8 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
+import ButtonWrapper from "./ButtonWrapper";
 
 interface IIconButton {
   color?: string;
@@ -15,12 +16,12 @@ const IconButton = (props: IIconButton) => {
   let { onPress, btnStyle, iconName, color, size = 20 } = props;
 
   return (
-    <TouchableOpacity
+    <ButtonWrapper
       style={{ ...styles.btnStyle, ...btnStyle }}
       onPress={onPress}
     >
       <WrapIcon iconName={iconName} color={color} size={size} />
-    </TouchableOpacity>
+    </ButtonWrapper>
   );
 };
 
