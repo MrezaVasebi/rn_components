@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import AppText from "./AppText";
 
 interface IAppTitleProps {
-  label: string;
+  label: string | undefined;
   lblStyle?: object;
 }
 

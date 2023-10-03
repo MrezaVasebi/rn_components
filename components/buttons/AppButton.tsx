@@ -16,7 +16,7 @@ const AppButton = (props: IAppButton) => {
   return (
     <ButtonWrapper
       onPress={onPress}
-      style={{ ...styles.btnStyle, ...btnStyle }}
+      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
       {...rest}
     >
       <AppText label={label} lblStyle={lblStyle} />
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
   btnStyle: {
     height: 45,
     width: "50%",
-    borderWidth: 0.5,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: appRadius.m,

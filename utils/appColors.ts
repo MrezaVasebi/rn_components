@@ -9,4 +9,6 @@ export const appColors = {
   purple: "#461959",
   yellow: "#F2BE22",
   lightGrey: "#D8D9DA",
+
+  borderColor: {},
 };

@@ -1,14 +1,23 @@
 import React from "react";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  TouchableOpacityProps,
-} from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
-const ButtonWrapper = (props: TouchableOpacityProps) => {
+interface IButtonWrapper {
+  btnStyle?: {};
+  disabled?: boolean;
+  onPress: () => void;
+  children: React.ReactNode;
+}
+
+const ButtonWrapper = (props: IButtonWrapper) => {
+  let { btnStyle, children, onPress, disabled } = props;
   return (
-    <TouchableOpacity activeOpacity={0.5} style={{ ...styles.rootStyle }}>
-      {props.children}
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.5}
+      disabled={disabled}
+      style={{ ...styles.rootStyle, ...btnStyle }}
+    >
+      {children}
     </TouchableOpacity>
   );
 };
