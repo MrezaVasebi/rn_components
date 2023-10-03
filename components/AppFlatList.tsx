@@ -1,6 +1,5 @@
 import React from "react";
 import { FlatList, ListRenderItem, StyleSheet } from "react-native";
-import { nestedLog } from "../modules";
 import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
 
@@ -22,8 +21,6 @@ const AppFlatList = ({
   onEndReached,
   contentStyle,
 }: IAppFlatList) => {
-  nestedLog(data);
-
   return (
     <FlatList
       data={data}
