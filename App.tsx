@@ -1,9 +1,10 @@
 import { memo } from "react";
 import { StyleSheet } from "react-native";
+import { RootScreen } from "./components";
 import { appMargin } from "./utils";
 
 const App = () => {
-  return null;
+  return <RootScreen rootStyle={styles.rootStyle}></RootScreen>;
 };
 
 export default memo(App);

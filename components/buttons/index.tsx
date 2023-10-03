@@ -4,6 +4,7 @@ import ButtonWrapper from "./ButtonWrapper";
 import CheckBoxButton from "./CheckBoxButton";
 import ChoosingModalButton from "./ChoosingModalButton";
 import IconButton from "./IconButton";
+import IconWithLabelButton from "./IconWithLabelButton";
 import LineTabButton from "./LineTabButton";
 import RadioButton from "./RadioButton";
 import SwitchButton from "./SwitchButton";
@@ -17,6 +18,7 @@ export {
   CheckBoxButton,
   ChoosingModalButton,
   IconButton,
+  IconWithLabelButton,
   LineTabButton,
   RadioButton,
   SwitchButton,
