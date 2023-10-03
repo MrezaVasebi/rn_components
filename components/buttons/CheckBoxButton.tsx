@@ -22,7 +22,7 @@ const CheckBoxButton = (props: ICheckBoxButton) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      style={{ ...styles.btnStyle, ...props.btnStyle }}
+      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
     >
       <View style={styles.circleStyle}>
         {props.isSelected && (

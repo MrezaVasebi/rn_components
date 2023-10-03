@@ -29,7 +29,7 @@ const Btn = (props: IBtn) => {
   return (
     <ButtonWrapper
       onPress={onPress}
-      style={{
+      btnStyle={{
         ...styles.btnStyle,
         ...btnStyle,
         borderBottomWidth: tabName === label ? 2 : 0,

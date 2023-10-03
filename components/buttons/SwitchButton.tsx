@@ -19,7 +19,7 @@ const SwitchButton = (props: ISwitchButton) => {
   return (
     <ButtonWrapper
       onPress={onPress}
-      style={{ ...styles.btnStyle, ...btnStyle }}
+      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
     >
       <View style={{ ...styles.circleStyle, ...style }} />
     </ButtonWrapper>

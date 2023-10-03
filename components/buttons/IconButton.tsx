@@ -17,7 +17,7 @@ const IconButton = (props: IIconButton) => {
 
   return (
     <ButtonWrapper
-      style={{ ...styles.btnStyle, ...btnStyle }}
+      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
       onPress={onPress}
     >
       <WrapIcon iconName={iconName} color={color} size={size} />

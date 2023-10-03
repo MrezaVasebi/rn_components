@@ -27,7 +27,7 @@ const ChoosingModalButton = (props: IChoosingModalButton) => {
       <View style={{ ...styles.innerStyle, ...props.innerStyle }}>
         <ButtonWrapper
           onPress={props.onPressShowModal}
-          style={styles.showModalStyle}
+          btnStyle={styles.showModalStyle}
         >
           <AppText label={props.selectedLabel} />
         </ButtonWrapper>
@@ -35,7 +35,7 @@ const ChoosingModalButton = (props: IChoosingModalButton) => {
         {props.selectedLabel !== props.placeHolder && (
           <ButtonWrapper
             onPress={props.onDeleteValue}
-            style={styles.deleteStyle}
+            btnStyle={styles.deleteStyle}
           >
             <WrapIcon iconName="close" size={20} />
           </ButtonWrapper>

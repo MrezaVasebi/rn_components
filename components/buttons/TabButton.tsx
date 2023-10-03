@@ -25,7 +25,7 @@ const TabButton = (props: ITabButton) => {
     return (
       <ButtonWrapper
         onPress={props.onPress}
-        style={{
+        btnStyle={{
           ...styles.tabStyle,
           backgroundColor:
             props.label === props.tabName ? appColors.red : appColors.white,

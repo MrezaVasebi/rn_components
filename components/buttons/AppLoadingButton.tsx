@@ -21,7 +21,7 @@ const AppLoadingButton = (props: IAppLoadingButton) => {
     <ButtonWrapper
       disabled={props.disabled}
       onPress={props.onPress}
-      style={{ ...styles.btnStyle, ...props.btnStyle }}
+      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
     >
       {props.loading ? (
         <AppSpinner color={props.spinnerColor} size={props.spinnerSize} />
