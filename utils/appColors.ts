@@ -11,4 +11,6 @@ export const appColors = {
   lightGrey: "#D8D9DA",
 
   borderColor: {},
+
+  modalBgColor: "rgba(0,0,0,0.5)",
 };
