@@ -2,32 +2,22 @@
 
 **react-native components which are written with typescript and react-native library.**
 
-Components are divided into 3 sections:
+**Buttons:**
 
-**1. Buttons**
+> _(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconButton, RadioButton, SwitchButton, TabButton, ThreeTabButton, LineTabButton, ...)_
 
-**2. Inputs**
+**Inputs:**
 
-**3. Text**
+> _(InputWithClearButton, InputWithIcon, InputWithLabel, SecureInput, SimpleInput, TwoFloorInputs, ...)_
 
-**4. Other**
-
-**Buttons include:**
-
-> _(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconButton, RadioButton, SwitchButton, TabButton, ThreeTabButton, LineTabButton)_
-
-**Inputs include:**
-
-> _(InputWithClearButton, InputWithIcon, InputWithLabel, SecureInput, SimpleInput, TwoFloorInputs)_
-
-**Texts include:**
+**Texts:**
 
 > _(AppText, AppTitle)_
 
-**Others include:**
+**Others:**
 
-> _(AppSpinner, FooterLoading, ItemSeparator, ...)_
+> _(AppSpinner, AppFlatList, FooterLoading, ItemSeparator, ModalRootScreen, ...)_
 
-_I try to add some new components to the project._
+_I try to add new components as I can._
 
-_You can clone and use it._
+_You can clone and use them._
