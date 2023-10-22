@@ -1,6 +1,6 @@
 # mb-components
 
-**react-native components which are written with typescript and react-native library.**
+**react-native components which were developed by typescript.**
 
 **Buttons:**
 
@@ -12,7 +12,7 @@
 
 **Texts:**
 
-> _(AppText, AppTitle)_
+> _(AppText, AppTitle, ...)_
 
 **Others:**
 
