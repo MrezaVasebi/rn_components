@@ -1,23 +1,33 @@
 # mb-components
 
-**react-native components which were developed by typescript.**
+React_native common components which were developed by typescript
 
-**Buttons:**
+### Feature
 
-> _(SimpleButton, LoadingButton, CheckBoxButton, ChoosingModalButton, IconButton, RadioButton, SwitchButton, TabButton, ThreeTabButton, LineTabButton, ...)_
+1. Use Expo
+2. Fully customized components
 
-**Inputs:**
+### Included Components
 
-> _(InputWithClearButton, InputWithIcon, InputWithLabel, SecureInput, SimpleInput, TwoFloorInputs, ...)_
+Buttons:
 
-**Texts:**
+> SimpleButton, LoadingButton, CheckBoxButton, IconButton, RadioButton, SwitchButton, TabButton, ...
 
-> _(AppText, AppTitle, ...)_
+Inputs:
 
-**Others:**
+> InputWithClearButton, InputWithIcon, InputWithLabel, SecureInput, SimpleInput, TwoFloorInputs, ...
 
-> _(AppSpinner, AppFlatList, FooterLoading, ItemSeparator, ModalRootScreen, ...)_
+Texts:
 
-_I try to add new components as I can._
+> AppText, AppTitle, ...
 
-_You can clone and use them._
+Others:
+
+> AppSpinner, AppFlatList, FooterLoading, ItemSeparator, ModalRootScreen, ...
+
+### Installation
+
+1. clone the project
+2. go to root folder
+3. in terminal -> npm install
+4. npx expo start
