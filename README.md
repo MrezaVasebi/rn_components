@@ -4,7 +4,7 @@ React_native common components which were developed by typescript
 
 ### Feature
 
-1. Use Expo
+1. Used [Expo](www.expo.dev)
 2. Fully customized components
 
 ### Included Components
@@ -28,6 +28,6 @@ Others:
 ### Installation
 
 1. clone the project
-2. go to root folder
+2. go to the root folder
 3. in terminal -> npm install
 4. npx expo start
