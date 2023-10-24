@@ -5,7 +5,8 @@ React_native common components which were developed by typescript
 ### Feature
 
 1. Used [Expo](www.expo.dev)
-2. Fully customized components
+2. Used TypeScript
+3. Fully customized components
 
 ### Included Components
 
