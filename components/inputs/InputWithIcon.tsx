@@ -1,5 +1,10 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import {
+  OpaqueColorValue,
+  StyleSheet,
+  TextInputProps,
+  View,
+} from "react-native";
 import { appColors, appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
 import ShowLabel from "./ShowLabel";
@@ -7,29 +12,23 @@ import SimpleInput from "./SimpleInput";
 
 interface IInputWithIcon {
   root?: {};
-  value: string;
   inputStyle?: {};
   iconName: string;
   showLabel?: boolean;
-  placeholder: string;
   size?: number | undefined;
-  color?: string | undefined;
   label?: string | undefined;
-  onChangeText: (value: string) => void;
+  color?: string | OpaqueColorValue;
 }
 
-const InputWithIcon = (props: IInputWithIcon) => {
+const InputWithIcon = (props: IInputWithIcon & TextInputProps) => {
   let {
     root,
     color,
-    value,
     label,
     iconName,
     size = 20,
     showLabel,
     inputStyle,
-    placeholder,
-    onChangeText,
   } = props;
 
   return (
@@ -38,16 +37,16 @@ const InputWithIcon = (props: IInputWithIcon) => {
 
       <View style={{ ...styles.root, ...root }}>
         <SimpleInput
-          onChangeText={onChangeText}
-          placeholder={placeholder}
-          value={value}
+          value={props.value}
+          placeholder={props.placeholder}
+          onChangeText={props.onChangeText}
           inputStyle={{ ...styles.inputStyle, ...inputStyle }}
         />
 
         <WrapIcon
-          iconName={iconName}
-          color={color}
           size={size}
+          color={color}
+          iconName={iconName}
           rootStyle={styles.iconStyle}
         />
       </View>

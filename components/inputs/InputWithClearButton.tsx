@@ -1,49 +1,43 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  TextInputProps,
+  TouchableOpacityProps,
+  View,
+} from "react-native";
 import { handleIcons } from "../../modules";
 import { appColors, appRadius } from "../../utils";
+import { ButtonWrapper } from "../buttons";
 import ShowLabel from "./ShowLabel";
 import SimpleInput from "./SimpleInput";
 
 interface IInputWithClearButton {
   label: string;
   root?: object;
-  value: string;
-  placeholder: string;
   showLabel?: boolean;
   onPressClear: () => void;
-  onChangeText: (value: string) => void;
 }
 
-const InputWithClearButton = (props: IInputWithClearButton) => {
-  let {
-    root,
-    value,
-    label,
-    showLabel,
-    placeholder,
-    onPressClear,
-    onChangeText,
-  } = props;
-
+const InputWithClearButton = (
+  props: IInputWithClearButton & TextInputProps & TouchableOpacityProps
+) => {
   return (
-    <View style={{ ...styles.root, ...root }}>
-      <ShowLabel label={label} isLabelShow={showLabel} />
+    <View style={{ ...styles.root, ...props.root }}>
+      <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
       <View style={{ ...styles.inputContainer }}>
-        <TouchableOpacity
-          activeOpacity={0.5}
-          onPress={onPressClear}
-          style={styles.clearStyle}
+        <ButtonWrapper
+          onPress={props.onPressClear}
+          btnStyle={styles.clearStyle}
         >
           {handleIcons("close", 20, appColors.black)}
-        </TouchableOpacity>
+        </ButtonWrapper>
 
         <SimpleInput
+          value={props.value}
+          placeholder={props.placeholder}
+          onChangeText={props.onChangeText}
           inputStyle={{ ...styles.inputStyle }}
-          onChangeText={onChangeText}
-          placeholder={placeholder}
-          value={value}
         />
       </View>
     </View>

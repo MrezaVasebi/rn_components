@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TextProps } from "react-native";
 import AppText from "./AppText";
 
 interface IAppTitleProps {
@@ -7,14 +7,10 @@ interface IAppTitleProps {
   lblStyle?: object;
 }
 
-const AppTitle = (props: IAppTitleProps) => {
-  let { label, lblStyle, ...rest } = props;
+const AppTitle = (props: IAppTitleProps & TextProps) => {
+  let { label, lblStyle } = props;
   return (
-    <AppText
-      {...rest}
-      label={label}
-      lblStyle={{ ...styles.lblStyle, ...lblStyle }}
-    />
+    <AppText label={label} lblStyle={{ ...styles.lblStyle, ...lblStyle }} />
   );
 };
 

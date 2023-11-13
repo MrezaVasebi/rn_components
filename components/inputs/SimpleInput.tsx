@@ -1,23 +1,18 @@
 import React, { memo } from "react";
-import { StyleSheet, TextInput } from "react-native";
-import { appColors, appPadding, appRadius } from "../../utils";
+import { StyleSheet, TextInputProps } from "react-native";
+import InputWrapper from "./InputWrapper";
 
 interface ISimpleInput {
-  value: string;
   inputStyle?: {};
-  placeholder: string;
-  onChangeText: (value: string) => void;
 }
 
-const SimpleInput = (props: ISimpleInput) => {
-  let { value, onChangeText, placeholder, inputStyle, ...rest } = props;
+const SimpleInput = (props: ISimpleInput & TextInputProps) => {
+  let { inputStyle } = props;
   return (
-    <TextInput
-      placeholderTextColor={appColors.grey}
-      placeholder={placeholder}
-      {...rest}
-      value={value}
-      onChangeText={onChangeText}
+    <InputWrapper
+      value={props.value}
+      placeholder={props.placeholder}
+      onChangeText={props.onChangeText}
       style={{ ...styles.inputStyle, ...inputStyle }}
     />
   );
@@ -26,11 +21,5 @@ const SimpleInput = (props: ISimpleInput) => {
 export default memo(SimpleInput);
 
 const styles = StyleSheet.create({
-  inputStyle: {
-    height: 45,
-    borderWidth: 0.5,
-    borderRadius: appRadius.s,
-    borderColor: appColors.grey,
-    paddingHorizontal: appPadding.s,
-  },
+  inputStyle: {},
 });

@@ -8,10 +8,9 @@ interface IAppText {
 }
 
 const AppText = (props: IAppText & TextProps) => {
-  let { label, lblStyle, ...rest } = props;
+  let { label, lblStyle } = props;
   return (
     <Text
-      {...rest}
       numberOfLines={props.numberOfLines}
       style={{ ...styles.lblStyle, ...lblStyle }}
     >

@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TextInputProps, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import ShowLabel from "./ShowLabel";
 import SimpleInput from "./SimpleInput";
@@ -18,7 +18,7 @@ interface ITwoFloorInput {
   onChangeTextBottom: (value: string) => void;
 }
 
-const TwoFloorInputs = (props: ITwoFloorInput) => {
+const TwoFloorInputs = (props: ITwoFloorInput & TextInputProps) => {
   let {
     root,
     label,

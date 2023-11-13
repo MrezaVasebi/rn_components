@@ -1,51 +1,43 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  TextInputProps,
+  TouchableOpacityProps,
+  View,
+} from "react-native";
 import { handleIcons } from "../../modules";
 import { appColors, appRadius } from "../../utils";
+import { ButtonWrapper } from "../buttons";
 import ShowLabel from "./ShowLabel";
 import SimpleInput from "./SimpleInput";
 
 interface ISecureInput {
   label: string;
   root?: object;
-  value: string;
   isShowText: boolean;
-  placeholder: string;
   showLabel?: boolean;
   onPressEye: () => void;
-  onChangeText: (value: string) => void;
 }
 
-const SecureInput = (props: ISecureInput) => {
-  let {
-    root,
-    value,
-    label,
-    showLabel,
-    isShowText,
-    onPressEye,
-    placeholder,
-    onChangeText,
-  } = props;
+const SecureInput = (
+  props: ISecureInput & TextInputProps & TouchableOpacityProps
+) => {
+  let { root, label, showLabel, isShowText, onPressEye } = props;
 
   return (
     <View style={{ ...styles.root, ...root }}>
       <ShowLabel label={label} isLabelShow={showLabel} />
 
       <View style={{ ...styles.inputContainer }}>
-        <TouchableOpacity
-          activeOpacity={0.5}
-          onPress={onPressEye}
-          style={styles.eyeStyle}
-        >
+        <ButtonWrapper onPress={onPressEye} btnStyle={styles.eyeStyle}>
           {handleIcons(isShowText ? "eye" : "eyeoff", 25, appColors.black)}
-        </TouchableOpacity>
+        </ButtonWrapper>
 
         <SimpleInput
+          value={props.value}
+          placeholder={props.placeholder}
+          onChangeText={props.onChangeText}
           inputStyle={{ ...styles.inputStyle }}
-          onChangeText={onChangeText}
-          placeholder={placeholder}
-          value={value}
         />
       </View>
     </View>
