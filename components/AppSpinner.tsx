@@ -3,7 +3,7 @@ import { ActivityIndicator, ColorValue } from "react-native";
 import { appColors } from "../utils";
 
 interface IAppSpinner {
-  color: ColorValue;
+  color?: ColorValue;
   size?: "small" | "large" | number;
 }
 

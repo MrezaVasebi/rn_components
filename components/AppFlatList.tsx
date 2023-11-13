@@ -1,41 +1,40 @@
 import React from "react";
-import { FlatList, ListRenderItem, StyleSheet } from "react-native";
+import { ColorValue, FlatList, FlatListProps, StyleSheet } from "react-native";
 import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
 
 interface IAppFlatList {
-  data: [];
-  contentStyle?: {};
-  isLoading?: boolean | undefined;
-  renderItem: ListRenderItem<never> | null | undefined;
-  onEndReached?:
-    | ((info: { distanceFromEnd: number }) => void)
-    | null
-    | undefined;
+  isLoading: boolean;
+  color?: ColorValue;
+  contentContainerStyle?: object;
+  size?: number | "small" | "large";
 }
 
-const AppFlatList = ({
-  data,
-  isLoading,
-  renderItem,
-  onEndReached,
-  contentStyle,
-}: IAppFlatList) => {
+const AppFlatList = <ItemT,>(props: IAppFlatList & FlatListProps<ItemT>) => {
   return (
     <FlatList
-      data={data}
-      renderItem={renderItem}
+      data={props.data}
       onEndReachedThreshold={0.5}
-      onEndReached={onEndReached}
+      renderItem={props.renderItem}
+      onEndReached={props.onEndReached}
       ItemSeparatorComponent={ItemSeparator}
       keyExtractor={(item, index) => index.toString()}
-      ListFooterComponent={<FooterLoading isLoading={isLoading} />}
-      contentContainerStyle={{ ...styles.contentStyle, ...contentStyle }}
+      ListFooterComponent={() => (
+        <FooterLoading
+          size={props.size}
+          color={props.color}
+          isLoading={props.isLoading}
+        />
+      )}
+      contentContainerStyle={{
+        ...styles.contentStyle,
+        ...props.contentContainerStyle,
+      }}
     />
   );
 };
 
-export default React.memo(AppFlatList);
+export default AppFlatList;
 
 const styles = StyleSheet.create({
   contentStyle: {},

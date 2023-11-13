@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { ColorValue, StyleSheet, View } from "react-native";
 import AppSpinner from "./AppSpinner";
 
 interface IFooterLoading {
   rootStyle?: {};
-  color?: string;
   isLoading?: boolean;
+  color?: ColorValue;
   size?: "small" | "large" | number;
 }
 

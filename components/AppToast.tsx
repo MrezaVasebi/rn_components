@@ -3,24 +3,14 @@ import { StyleSheet, View } from "react-native";
 import { appColors, appRadius } from "../utils";
 import { AppText, AppTitle } from "./texts";
 
-export enum EnumStatus {
-  error,
-  success,
-}
-
-enum EnumToastPosition {
-  top,
-  bottom,
-}
-
 interface IAppToast {
   root?: {};
   msgStyle?: {};
   titleStyle?: {};
-  status?: EnumStatus;
   msgLbl: string | undefined;
+  position?: "top" | "bottom";
+  status?: "success" | "error";
   titleLbl: string | undefined;
-  position?: EnumToastPosition;
 }
 
 const AppToast = (props: IAppToast) => {
@@ -30,16 +20,16 @@ const AppToast = (props: IAppToast) => {
     msgStyle,
     titleLbl,
     titleStyle,
-    status = EnumStatus.error,
-    position = EnumToastPosition.top,
+    status = "error",
+    position = "top",
   } = props;
 
   let positionStyle = {};
-  if (position === EnumToastPosition.top) positionStyle = { top: 20 };
+  if (position === "top") positionStyle = { top: 20 };
   else positionStyle = { bottom: 20 };
 
   function setBgColor(): string {
-    if (status === EnumStatus.success) return appColors.green;
+    if (status === "success") return appColors.green;
     else return appColors.red;
   }
 
