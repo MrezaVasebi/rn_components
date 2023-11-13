@@ -1,15 +1,14 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import ButtonWrapper from "./ButtonWrapper";
 
 interface ISwitchButton {
   btnStyle?: {};
   isSelected: boolean;
-  onPress: () => void;
 }
 
-const SwitchButton = (props: ISwitchButton) => {
+const SwitchButton = (props: ISwitchButton & TouchableOpacityProps) => {
   let { isSelected, onPress, btnStyle } = props;
 
   let style: object = {};

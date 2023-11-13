@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
@@ -9,10 +9,9 @@ interface IRadioButtonProps {
   btnStyle?: {};
   label: string;
   isSelected: boolean;
-  onPress: () => void;
 }
 
-const RadioButton = (props: IRadioButtonProps) => {
+const RadioButton = (props: IRadioButtonProps & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}

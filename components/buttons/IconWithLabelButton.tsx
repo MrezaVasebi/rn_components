@@ -1,5 +1,9 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import {
+  OpaqueColorValue,
+  StyleSheet,
+  TouchableOpacityProps,
+} from "react-native";
 import { appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
 import { AppText } from "../texts";
@@ -7,16 +11,17 @@ import ButtonWrapper from "./ButtonWrapper";
 
 interface IIconWithLabelButton {
   label: string;
-  color?: string;
   iconName: string;
   lblStyle?: object;
   rootStyle?: object;
   iconStyle?: object;
-  onPress: () => void;
   size?: number | undefined;
+  color?: string | OpaqueColorValue;
 }
 
-const IconWithLabelButton = (props: IIconWithLabelButton) => {
+const IconWithLabelButton = (
+  props: IIconWithLabelButton & TouchableOpacityProps
+) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}

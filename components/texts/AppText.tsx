@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, TextProps } from "react-native";
 import { appColors } from "../../utils";
 
 interface IAppText {
@@ -7,10 +7,14 @@ interface IAppText {
   label: string | undefined;
 }
 
-const AppText = (props: IAppText) => {
+const AppText = (props: IAppText & TextProps) => {
   let { label, lblStyle, ...rest } = props;
   return (
-    <Text {...rest} style={{ ...styles.lblStyle, ...lblStyle }}>
+    <Text
+      {...rest}
+      numberOfLines={props.numberOfLines}
+      style={{ ...styles.lblStyle, ...lblStyle }}
+    >
       {label}
     </Text>
   );

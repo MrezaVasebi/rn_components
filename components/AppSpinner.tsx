@@ -1,9 +1,9 @@
 import React from "react";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, ColorValue } from "react-native";
 import { appColors } from "../utils";
 
 interface IAppSpinner {
-  color?: string;
+  color: ColorValue;
   size?: "small" | "large" | number;
 }
 

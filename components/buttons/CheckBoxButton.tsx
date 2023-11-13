@@ -1,22 +1,21 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors } from "../../utils";
 import WrapIcon from "../WrapIcon";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
 
 interface ICheckBoxButton {
-  lblStyle?: {};
-  btnStyle?: {};
   label: string;
+  lblStyle?: object;
+  btnStyle?: object;
   iconName?: string;
   iconSize?: number;
   iconColor?: string;
-  onPress: () => void;
   isSelected: boolean;
 }
 
-const CheckBoxButton = (props: ICheckBoxButton) => {
+const CheckBoxButton = (props: ICheckBoxButton & TouchableOpacityProps) => {
   let { iconColor = appColors.red, iconName = "check", iconSize = 18 } = props;
 
   return (

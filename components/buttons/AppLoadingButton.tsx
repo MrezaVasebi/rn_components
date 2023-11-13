@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet } from "react-native";
+import { ColorValue, StyleSheet, TouchableOpacityProps } from "react-native";
 import { appRadius } from "../../utils";
 import AppSpinner from "../AppSpinner";
 import { AppText } from "../texts";
@@ -8,19 +8,17 @@ import ButtonWrapper from "./ButtonWrapper";
 interface IAppLoadingButton {
   label: string;
   loading: boolean;
-  disabled: boolean;
   btnStyle?: object;
   lblStyle?: object;
-  onPress: () => void;
-  spinnerColor?: string;
+  spinnerColor: ColorValue;
   spinnerSize?: number | "small" | "large";
 }
 
-const AppLoadingButton = (props: IAppLoadingButton) => {
+const AppLoadingButton = (props: IAppLoadingButton & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
-      disabled={props.disabled}
       onPress={props.onPress}
+      disabled={props.disabled}
       btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
     >
       {props.loading ? (

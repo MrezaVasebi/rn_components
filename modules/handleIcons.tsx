@@ -1,10 +1,11 @@
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import { OpaqueColorValue } from "react-native";
 import { appColors } from "../utils";
 
 export const handleIcons = (
   name: string,
   size: number | undefined,
-  color: string | undefined
+  color?: string | OpaqueColorValue
 ): JSX.Element | null => {
   if (size === undefined) size = 15;
   if (color === undefined) color = appColors.black;

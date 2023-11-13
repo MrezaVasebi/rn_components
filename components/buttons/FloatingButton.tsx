@@ -4,6 +4,7 @@ import {
   Modal,
   StyleSheet,
   TouchableOpacity,
+  TouchableOpacityProps,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
@@ -43,7 +44,7 @@ interface IFloatingButton {
   showModalHandler: (value: boolean) => void;
 }
 
-const FloatingButton = (props: IFloatingButton) => {
+const FloatingButton = (props: IFloatingButton & TouchableOpacityProps) => {
   let {
     menu,
     rootStyle,

@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { OpaqueColorValue, StyleSheet, View } from "react-native";
 import { handleIcons } from "../modules";
 
 interface IWrapIcon {
   size?: number;
-  color?: string;
   rootStyle?: {};
   iconName: string;
+  color?: string | OpaqueColorValue;
 }
 
 const WrapIcon = ({ iconName, size, color, rootStyle }: IWrapIcon) => {

@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
@@ -20,10 +20,9 @@ interface IBtn {
   tabName: string;
   lblStyle?: object;
   btnStyle?: object;
-  onPress: () => void;
 }
 
-const Btn = (props: IBtn) => {
+const Btn = (props: IBtn & TouchableOpacityProps) => {
   let { label, tabName, onPress, btnStyle, lblStyle } = props;
 
   return (

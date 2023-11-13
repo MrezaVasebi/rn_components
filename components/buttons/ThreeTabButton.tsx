@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
@@ -20,11 +20,10 @@ interface ITabs {
   btnStyle: {};
   label: string;
   tabName: string;
-  onPress: () => void;
 }
 
 const ThreeTabButton = (props: ITabButton) => {
-  const Tabs = (props: ITabs) => {
+  const Tabs = (props: TouchableOpacityProps & ITabs) => {
     return (
       <ButtonWrapper
         onPress={props.onPress}
