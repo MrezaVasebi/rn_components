@@ -4,9 +4,11 @@ import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
 
 interface IAppFlatList {
-  isLoading: boolean;
+  flatStyle?: object;
   color?: ColorValue;
+  isLoading?: boolean;
   contentContainerStyle?: object;
+  separatedHeight?: number | string;
   size?: number | "small" | "large";
 }
 
@@ -17,7 +19,9 @@ const AppFlatList = <ItemT,>(props: IAppFlatList & FlatListProps<ItemT>) => {
       onEndReachedThreshold={0.5}
       renderItem={props.renderItem}
       onEndReached={props.onEndReached}
-      ItemSeparatorComponent={ItemSeparator}
+      ItemSeparatorComponent={() => (
+        <ItemSeparator height={props.separatedHeight} />
+      )}
       keyExtractor={(item, index) => index.toString()}
       ListFooterComponent={() => (
         <FooterLoading
@@ -30,6 +34,7 @@ const AppFlatList = <ItemT,>(props: IAppFlatList & FlatListProps<ItemT>) => {
         ...styles.contentStyle,
         ...props.contentContainerStyle,
       }}
+      style={props.flatStyle}
     />
   );
 };

@@ -1,14 +1,14 @@
 import React from "react";
 import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
-import AppToast, { EnumStatus } from "./AppToast";
+import AppToast from "./AppToast";
 
 interface IRootScreenProps {
   toastMsg?: string;
   rootStyle?: object;
   toastTitle?: string;
   isShowToast?: boolean;
-  toastStatus?: EnumStatus;
   children?: React.ReactNode;
+  toastStatus?: 'success'|'error';
 }
 
 const RootScreen = (props: IRootScreenProps) => {

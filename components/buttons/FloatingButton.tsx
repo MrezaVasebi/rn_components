@@ -1,16 +1,16 @@
 import React from "react";
 import {
-  FlatList,
   Modal,
   StyleSheet,
-  TouchableOpacity,
   TouchableOpacityProps,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 import { appColors } from "../../utils";
+import AppFlatList from "../AppFlatList";
 import WrapIcon from "../WrapIcon";
 import { AppText } from "../texts";
+import ButtonWrapper from "./ButtonWrapper";
 
 // how to use component
 /*
@@ -40,8 +40,8 @@ interface IFloatingButton {
   rootStyle?: {};
   isShowModal: boolean;
   innerButtonStyle?: {};
-  onPressItem: (_id: string) => void;
-  showModalHandler: (value: boolean) => void;
+  onPressItem: (item: object) => void;
+  showModalHandler: (isShowModal: boolean) => void;
 }
 
 const FloatingButton = (props: IFloatingButton & TouchableOpacityProps) => {
@@ -58,28 +58,27 @@ const FloatingButton = (props: IFloatingButton & TouchableOpacityProps) => {
 
   return (
     <>
-      <TouchableOpacity
-        activeOpacity={0.5}
+      <ButtonWrapper
         onPress={() => showModalHandler(true)}
-        style={{ ...styles.rootStyle, zIndex: 1, ...rootStyle }}
+        btnStyle={{ ...styles.rootStyle, zIndex: 1, ...rootStyle }}
       >
         <WrapIcon iconName="plus" color={color} size={size} />
-      </TouchableOpacity>
+      </ButtonWrapper>
 
       {isShowModal && (
         <Modal transparent statusBarTranslucent animationType="fade">
           <TouchableWithoutFeedback onPress={() => showModalHandler(false)}>
             <View style={styles.modalStyle}>
               <View style={styles.menuStyle}>
-                <FlatList
+                <AppFlatList
                   data={menu}
+                  separatedHeight={10}
                   renderItem={({ item }) => {
                     return (
-                      <TouchableOpacity
-                        activeOpacity={0.5}
-                        style={styles.itemStyle}
+                      <ButtonWrapper
+                        btnStyle={styles.itemStyle}
                         onPress={() => {
-                          onPressItem(item._id);
+                          onPressItem(item);
 
                           // close modal
                           showModalHandler(false);
@@ -95,19 +94,19 @@ const FloatingButton = (props: IFloatingButton & TouchableOpacityProps) => {
                           iconName={item?.iconName}
                           rootStyle={{ marginRight: 10 }}
                         />
-                      </TouchableOpacity>
+                      </ButtonWrapper>
                     );
                   }}
+                  flatStyle={{ marginBottom: 10 }}
                 />
               </View>
 
-              <TouchableOpacity
-                activeOpacity={0.5}
+              <ButtonWrapper
                 onPress={() => showModalHandler(false)}
-                style={{ ...styles.rootStyle, ...innerButtonStyle }}
+                btnStyle={{ ...styles.rootStyle, ...innerButtonStyle }}
               >
                 <WrapIcon iconName="close" color={color} size={size} />
-              </TouchableOpacity>
+              </ButtonWrapper>
             </View>
           </TouchableWithoutFeedback>
         </Modal>
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
   itemStyle: {
     padding: 5,
     borderRadius: 5,
-    marginBottom: 15,
+    // marginBottom: 15,
     alignItems: "center",
     justifyContent: "flex-end",
     flexDirection: "row-reverse",
