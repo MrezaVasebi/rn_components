@@ -13,7 +13,7 @@ const SimpleInput = (props: ISimpleInput & TextInputProps) => {
       value={props.value}
       placeholder={props.placeholder}
       onChangeText={props.onChangeText}
-      style={{ ...styles.inputStyle, ...inputStyle }}
+      inputStyle={{ ...styles.inputStyle, ...inputStyle }}
     />
   );
 };

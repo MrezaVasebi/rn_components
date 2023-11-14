@@ -16,7 +16,7 @@ interface IIconWithLabelButton {
   rootStyle?: object;
   iconStyle?: object;
   size?: number | undefined;
-  color?: string | OpaqueColorValue;
+  iconColor?: string | OpaqueColorValue;
 }
 
 const IconWithLabelButton = (
@@ -34,7 +34,7 @@ const IconWithLabelButton = (
 
       <WrapIcon
         size={props.size}
-        color={props.color}
+        color={props.iconColor}
         iconName={props.iconName}
         rootStyle={{ ...styles.iconStyle, ...props.iconStyle }}
       />

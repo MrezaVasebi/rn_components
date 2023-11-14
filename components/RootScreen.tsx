@@ -8,7 +8,8 @@ interface IRootScreenProps {
   toastTitle?: string;
   isShowToast?: boolean;
   children?: React.ReactNode;
-  toastStatus?: 'success'|'error';
+  toastPosition?: "top" | "bottom";
+  toastStatus?: "success" | "error" | "info" | "warn";
 }
 
 const RootScreen = (props: IRootScreenProps) => {
@@ -22,6 +23,7 @@ const RootScreen = (props: IRootScreenProps) => {
           msgLbl={toastMsg}
           status={toastStatus}
           titleLbl={toastTitle}
+          position={props.toastPosition}
         />
       )}
 

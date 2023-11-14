@@ -9,8 +9,8 @@ interface IAppToast {
   titleStyle?: {};
   msgLbl: string | undefined;
   position?: "top" | "bottom";
-  status?: "success" | "error";
   titleLbl: string | undefined;
+  status?: "success" | "error" | "info" | "warn";
 }
 
 const AppToast = (props: IAppToast) => {
@@ -30,6 +30,8 @@ const AppToast = (props: IAppToast) => {
 
   function setBgColor(): string {
     if (status === "success") return appColors.green;
+    if (status === "info") return appColors.blue;
+    if (status === "warn") return appColors.yellow;
     else return appColors.red;
   }
 

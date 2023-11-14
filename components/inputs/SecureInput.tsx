@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
   },
   eyeStyle: {
     width: 30,
+    marginRight: 5,
     alignItems: "center",
     justifyContent: "center",
   },
