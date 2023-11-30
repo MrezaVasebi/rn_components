@@ -20,8 +20,8 @@ const IconButton = (props: IIconButton & TouchableOpacityProps) => {
 
   return (
     <ButtonWrapper
-      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
       onPress={props.onPress}
+      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
     >
       <WrapIcon iconName={iconName} color={color} size={size} />
     </ButtonWrapper>

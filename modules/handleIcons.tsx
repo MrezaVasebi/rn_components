@@ -1,4 +1,4 @@
-import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome, Ionicons } from "@expo/vector-icons";
 import { OpaqueColorValue } from "react-native";
 import { appColors } from "../utils";
 
@@ -11,6 +11,12 @@ export const handleIcons = (
   if (color === undefined) color = appColors.black;
 
   switch (name) {
+    case "play":
+      return <AntDesign name="play" size={size} color={color} />;
+    case "stop":
+      return <FontAwesome name="stop-circle" size={size} color={color} />;
+    case "pause":
+      return <AntDesign name="pausecircle" size={size} color={color} />;
     case "eyeoff":
       return <Ionicons name="eye-off" size={size} color={color} />;
     case "eye":
