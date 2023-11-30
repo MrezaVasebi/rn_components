@@ -19,5 +19,6 @@ export default React.memo(AppTitle);
 const styles = StyleSheet.create({
   lblStyle: {
     fontSize: 20,
+    fontFamily: "medium",
   },
 });

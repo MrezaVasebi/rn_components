@@ -35,6 +35,7 @@ const StartPauseStopTimer = (props: IStartPauseStopTimer) => {
       <View style={styles.timerStyle}>
         <AppText
           label={value < 10 ? "0" + value.toString() : value.toString()}
+          lblStyle={{ fontSize: 15 }}
         />
       </View>
     );
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   timerStyle: {
-    padding: 10,
+    padding: 7,
     borderRadius: 10,
     borderWidth: 0.5,
     alignItems: "center",

@@ -24,6 +24,7 @@ export default memo(AppText);
 const styles = StyleSheet.create({
   lblStyle: {
     fontSize: 13,
+    fontFamily: "medium",
     color: appColors.black,
   },
 });
