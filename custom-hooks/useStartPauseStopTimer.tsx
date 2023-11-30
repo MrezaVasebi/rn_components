@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
+import { IStartPauseStopTimer } from "../components/timer/StartPauseStopTimer";
 import { secondsToTime } from "../modules";
 
 type timeType = { h: number; m: number; s: number };
 
-interface IStartStopTimer {
-  seconds: number;
-  rootStyle?: object;
-  timerStatus: string;
-  onChangeTimerStatus: (status: string) => void;
-}
-
-export const useStartPauseStopTimer = (props: IStartStopTimer) => {
+export const useStartPauseStopTimer = (props: IStartPauseStopTimer) => {
   let timerId: string | number | NodeJS.Timeout | undefined;
 
   const [time, setTime] = useState<timeType>({ h: 0, m: 0, s: 0 });

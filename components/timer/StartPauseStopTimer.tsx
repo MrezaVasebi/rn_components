@@ -5,7 +5,7 @@ import { appColors } from "../../utils";
 import { IconButton } from "../buttons";
 import { AppText } from "../texts";
 
-interface IStartPauseStopTimer {
+export interface IStartPauseStopTimer {
   seconds: number;
   rootStyle?: object;
   timerStatus: string;

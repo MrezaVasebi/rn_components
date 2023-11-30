@@ -1,6 +1,5 @@
 import AppFlatList from "./AppFlatList";
 import AppSpinner from "./AppSpinner";
-import AppTimer from "./AppTimer";
 import AppToast from "./AppToast";
 import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
@@ -12,7 +11,6 @@ import WrapIcon from "./WrapIcon";
 export {
   AppFlatList,
   AppSpinner,
-  AppTimer,
   AppToast,
   FooterLoading,
   ItemSeparator,
