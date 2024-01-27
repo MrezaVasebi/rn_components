@@ -16,8 +16,6 @@ interface ICheckBoxButton {
 }
 
 const CheckBoxButton = (props: ICheckBoxButton & TouchableOpacityProps) => {
-  let { iconColor = appColors.red, iconName = "check", iconSize = 18 } = props;
-
   return (
     <ButtonWrapper
       onPress={props.onPress}
@@ -25,7 +23,11 @@ const CheckBoxButton = (props: ICheckBoxButton & TouchableOpacityProps) => {
     >
       <View style={styles.circleStyle}>
         {props.isSelected && (
-          <WrapIcon iconName={iconName} color={iconColor} size={iconSize} />
+          <WrapIcon
+            size={props.iconSize ?? 18}
+            iconName={props.iconName ?? "check"}
+            color={props.iconColor ?? appColors.red}
+          />
         )}
       </View>
 

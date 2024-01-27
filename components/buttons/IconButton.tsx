@@ -16,14 +16,16 @@ interface IIconButton {
 }
 
 const IconButton = (props: IIconButton & TouchableOpacityProps) => {
-  let { btnStyle, iconName, color, size = 20 } = props;
-
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
+      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
     >
-      <WrapIcon iconName={iconName} color={color} size={size} />
+      <WrapIcon
+        iconName={props.iconName}
+        color={props.color}
+        size={props.size ?? 20}
+      />
     </ButtonWrapper>
   );
 };

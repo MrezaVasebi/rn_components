@@ -66,7 +66,7 @@ const FloatingButtonModal = (props: IFloatingButton) => {
   );
 };
 
-export default FloatingButtonModal;
+export default React.memo(FloatingButtonModal);
 
 const styles = StyleSheet.create({
   rootStyle: {

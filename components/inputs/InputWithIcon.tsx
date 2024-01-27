@@ -21,32 +21,22 @@ interface IInputWithIcon {
 }
 
 const InputWithIcon = (props: IInputWithIcon & TextInputProps) => {
-  let {
-    root,
-    color,
-    label,
-    iconName,
-    size = 20,
-    showLabel,
-    inputStyle,
-  } = props;
-
   return (
     <>
-      <ShowLabel label={label} isLabelShow={showLabel} />
+      <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
-      <View style={{ ...styles.root, ...root }}>
+      <View style={{ ...styles.root, ...props.root }}>
         <SimpleInput
           value={props.value}
           placeholder={props.placeholder}
           onChangeText={props.onChangeText}
-          inputStyle={{ ...styles.inputStyle, ...inputStyle }}
+          inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
         />
 
         <WrapIcon
-          size={size}
-          color={color}
-          iconName={iconName}
+          color={props.color}
+          iconName={props.iconName}
+          size={props.size ?? 20}
           rootStyle={styles.iconStyle}
         />
       </View>

@@ -11,17 +11,18 @@ interface IInputWithLabel {
 }
 
 const InputWithLabel = (props: IInputWithLabel & TextInputProps) => {
-  let { root, label, lblStyle, inputStyle } = props;
-
   return (
-    <View style={{ ...styles.root, ...root }}>
-      <AppText lblStyle={{ ...styles.lblStyle, ...lblStyle }} label={label} />
+    <View style={{ ...styles.root, ...props.root }}>
+      <AppText
+        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
+        label={props.label}
+      />
 
       <SimpleInput
         value={props.value}
         placeholder={props.placeholder}
         onChangeText={props.onChangeText}
-        inputStyle={{ ...styles.inputStyle, ...inputStyle }}
+        inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
       />
     </View>
   );

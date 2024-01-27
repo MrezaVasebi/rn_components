@@ -22,15 +22,19 @@ interface ISecureInput {
 const SecureInput = (
   props: ISecureInput & TextInputProps & TouchableOpacityProps
 ) => {
-  let { root, label, showLabel, isShowText, onPressEye } = props;
+  // let { root, label, showLabel, isShowText, onPressEye } = props;
 
   return (
-    <View style={{ ...styles.root, ...root }}>
-      <ShowLabel label={label} isLabelShow={showLabel} />
+    <View style={{ ...styles.root, ...props.root }}>
+      <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
       <View style={{ ...styles.inputContainer }}>
-        <ButtonWrapper onPress={onPressEye} btnStyle={styles.eyeStyle}>
-          {handleIcons(isShowText ? "eye" : "eyeoff", 25, appColors.black)}
+        <ButtonWrapper onPress={props.onPressEye} btnStyle={styles.eyeStyle}>
+          {handleIcons(
+            props.isShowText ? "eye" : "eyeoff",
+            25,
+            appColors.black
+          )}
         </ButtonWrapper>
 
         <SimpleInput

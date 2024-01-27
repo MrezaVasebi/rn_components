@@ -39,7 +39,7 @@ const RootModalScreen = (props: IRootMOdal) => {
   );
 };
 
-export default RootModalScreen;
+export default React.memo(RootModalScreen);
 
 const styles = StyleSheet.create({
   mainStyle: {

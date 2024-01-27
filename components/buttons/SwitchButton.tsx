@@ -9,16 +9,16 @@ interface ISwitchButton {
 }
 
 const SwitchButton = (props: ISwitchButton & TouchableOpacityProps) => {
-  let { isSelected, onPress, btnStyle } = props;
+  // let { isSelected, onPress, btnStyle } = props;
 
   let style: object = {};
-  if (isSelected) style = { right: 5, backgroundColor: appColors.red };
+  if (props.isSelected) style = { right: 5, backgroundColor: appColors.red };
   else style = { left: 5, backgroundColor: appColors.white };
 
   return (
     <ButtonWrapper
-      onPress={onPress}
-      btnStyle={{ ...styles.btnStyle, ...btnStyle }}
+      onPress={props.onPress}
+      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
     >
       <View style={{ ...styles.circleStyle, ...style }} />
     </ButtonWrapper>

@@ -35,7 +35,7 @@ const TimerCountDown = (props: ITimerCountDown) => {
   );
 };
 
-export default TimerCountDown;
+export default React.memo(TimerCountDown);
 
 const styles = StyleSheet.create({
   rootStyle: {

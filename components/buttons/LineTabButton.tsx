@@ -40,30 +40,20 @@ const Btn = (props: IBtn & TouchableOpacityProps) => {
 };
 
 const LineTabButton = (props: ILineTabButton) => {
-  let {
-    root,
-    tabName,
-    lblLeft,
-    lblRight,
-    onPressLeft,
-    onPressRight,
-    btnStyleLeft,
-    btnStyleRight,
-  } = props;
   return (
-    <View style={{ ...styles.root, ...root }}>
+    <View style={{ ...styles.root, ...props.root }}>
       <Btn
-        tabName={tabName}
-        onPress={onPressLeft}
-        label={lblLeft}
-        btnStyle={btnStyleLeft}
+        tabName={props.tabName}
+        onPress={props.onPressLeft}
+        label={props.lblLeft}
+        btnStyle={props.btnStyleLeft}
       />
 
       <Btn
-        tabName={tabName}
-        onPress={onPressRight}
-        label={lblRight}
-        btnStyle={btnStyleRight}
+        tabName={props.tabName}
+        onPress={props.onPressRight}
+        label={props.lblRight}
+        btnStyle={props.btnStyleRight}
       />
     </View>
   );

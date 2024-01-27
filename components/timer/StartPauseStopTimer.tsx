@@ -77,7 +77,7 @@ const StartPauseStopTimer = (props: IStartPauseStopTimer) => {
   );
 };
 
-export default StartPauseStopTimer;
+export default React.memo(StartPauseStopTimer);
 
 const styles = StyleSheet.create({
   rootStyle: {

@@ -19,44 +19,30 @@ interface ITwoFloorInput {
 }
 
 const TwoFloorInputs = (props: ITwoFloorInput & TextInputProps) => {
-  let {
-    root,
-    label,
-    valueTop,
-    showLabel,
-    valueBottom,
-    inputStyleTop,
-    placeholderTop,
-    onChangeTextTop,
-    inputStyleBottom,
-    placeholderBottom,
-    onChangeTextBottom,
-  } = props;
-
   return (
     <>
-      <ShowLabel label={label} isLabelShow={showLabel} />
+      <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
-      <View style={{ ...styles.root, ...root }}>
+      <View style={{ ...styles.root, ...props.root }}>
         <SimpleInput
-          value={valueTop}
-          placeholder={placeholderTop}
-          onChangeText={onChangeTextTop}
+          value={props.valueTop}
+          placeholder={props.placeholderTop}
+          onChangeText={props.onChangeTextTop}
           inputStyle={{
             ...styles.commonStyle,
-            ...inputStyleTop,
+            ...props.inputStyleTop,
           }}
         />
 
         <View style={styles.lineStyle} />
 
         <SimpleInput
-          value={valueBottom}
-          placeholder={placeholderBottom}
-          onChangeText={onChangeTextBottom}
+          value={props.valueBottom}
+          placeholder={props.placeholderBottom}
+          onChangeText={props.onChangeTextBottom}
           inputStyle={{
             ...styles.commonStyle,
-            ...inputStyleBottom,
+            ...props.inputStyleBottom,
           }}
         />
       </View>

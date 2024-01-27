@@ -7,13 +7,12 @@ interface ISimpleInput {
 }
 
 const SimpleInput = (props: ISimpleInput & TextInputProps) => {
-  let { inputStyle } = props;
   return (
     <InputWrapper
       value={props.value}
       placeholder={props.placeholder}
       onChangeText={props.onChangeText}
-      inputStyle={{ ...styles.inputStyle, ...inputStyle }}
+      inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
     />
   );
 };
