@@ -4,13 +4,13 @@ import { appRadius } from "../../utils";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
 
-interface IAppButton {
+interface ISimpleButton {
   label: string;
   btnStyle?: object;
   lblStyle?: object;
 }
 
-const AppButton = (props: IAppButton & TouchableOpacityProps) => {
+const SimpleButton = (props: ISimpleButton & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}
@@ -22,7 +22,7 @@ const AppButton = (props: IAppButton & TouchableOpacityProps) => {
   );
 };
 
-export default memo(AppButton);
+export default memo(SimpleButton);
 
 const styles = StyleSheet.create({
   btnStyle: {

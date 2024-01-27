@@ -11,6 +11,7 @@ const AppText = (props: IAppText & TextProps) => {
   let { label, lblStyle } = props;
   return (
     <Text
+      ellipsizeMode={props.ellipsizeMode}
       numberOfLines={props.numberOfLines}
       style={{ ...styles.lblStyle, ...lblStyle }}
     >
