@@ -8,9 +8,9 @@ import {
 import { appColors } from "../../utils";
 import AppFlatList from "../AppFlatList";
 import WrapIcon from "../WrapIcon";
-import { ButtonWrapper } from "../buttons";
+import ButtonWrapper from "../buttons/ButtonWrapper";
 import { IFloatingButton } from "../buttons/FloatingButton";
-import { AppText } from "../texts";
+import AppText from "../texts/AppText";
 
 const FloatingButtonModal = (props: IFloatingButton) => {
   return (
