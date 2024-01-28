@@ -5,6 +5,7 @@ import FloatingButton from "./FloatingButton";
 import IconButton from "./IconButton";
 import IconWithLabelButton from "./IconWithLabelButton";
 import LineTabButton from "./LineTabButton";
+import MultiSelectButtonModal from "./MultiSelectButtonModal";
 import RadioButton from "./RadioButton";
 import SimpleButton from "./SimpleButton";
 import SingleSelectButtonModal from "./SingleSelectButtonModal";
@@ -20,6 +21,7 @@ export {
   IconButton,
   IconWithLabelButton,
   LineTabButton,
+  MultiSelectButtonModal,
   RadioButton,
   SimpleButton,
   SingleSelectButtonModal,
