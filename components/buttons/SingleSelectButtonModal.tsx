@@ -3,9 +3,9 @@ import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import AppFlatList from "../AppFlatList";
 import WrapIcon from "../WrapIcon";
-import { SimpleInput } from "../inputs";
+import SimpleInput from "../inputs/SimpleInput";
 import { RootModalScreen } from "../modal";
-import { AppText } from "../texts";
+import AppText from "../texts/AppText";
 import ButtonWrapper from "./ButtonWrapper";
 
 interface ISingleSelectButtonModal<D> {
@@ -33,7 +33,7 @@ export interface IModalData {
   label: string;
 }
 
-const [name, setName] = useState<string>("Selecting...");
+  const [name, setName] = useState<string>("Selecting...");
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalData, setModalData] = useState<Array<IModalData>>([
     { name: "tabriz", label: "Tabriz" },
@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderWidth: 0.5,
     overflow: "hidden",
+    paddingHorizontal: 7,
     flexDirection: "row",
     borderRadius: appRadius.m,
     borderColor: appColors.grey,
