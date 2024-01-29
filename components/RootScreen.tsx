@@ -13,21 +13,18 @@ interface IRootScreenProps {
 }
 
 const RootScreen = (props: IRootScreenProps) => {
-  let { children, rootStyle, isShowToast, toastMsg, toastTitle, toastStatus } =
-    props;
-
   return (
-    <SafeAreaView style={{ ...styles.rootStyle, ...rootStyle }}>
-      {isShowToast && (
+    <SafeAreaView style={{ ...styles.rootStyle, ...props.rootStyle }}>
+      {props.isShowToast && (
         <AppToast
-          msgLbl={toastMsg}
-          status={toastStatus}
-          titleLbl={toastTitle}
+          msgLbl={props.toastMsg}
+          status={props.toastStatus}
+          titleLbl={props.toastTitle}
           position={props.toastPosition}
         />
       )}
 
-      {children}
+      {props.children}
     </SafeAreaView>
   );
 };

@@ -6,8 +6,7 @@ interface IItemSeparator {
 }
 
 const ItemSeparator = (props: IItemSeparator) => {
-  let { height = 15 } = props;
-  return <View style={{ height }} />;
+  return <View style={{ height: props.height ?? 15 }} />;
 };
 
 export default React.memo(ItemSeparator);
