@@ -28,30 +28,29 @@ interface ISingleSelectButtonModal<D> {
 
 // how to use component
 /*
-export interface IModalData {
-  name: string;
-  label: string;
-}
+  export interface IModalData {
+    name: string;
+    label: string;
+  }
 
-  const [name, setName] = useState<string>("Selecting...");
+  const fixedTxt = "Selecting...";
+
+  const [name, setName] = useState<string>(fixedTxt);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalData, setModalData] = useState<Array<IModalData>>([
     { name: "tabriz", label: "Tabriz" },
     { name: "tehran", label: "Tehran" },
     { name: "Shiraz", label: "Shiraz" },
   ]);
-  const [copyModalData, setCopyModalData] = useState<Array<IModalData>>([
+  const [pureData, setPureData] = useState<Array<IModalData>>([
     { name: "tabriz", label: "Tabriz" },
     { name: "tehran", label: "Tehran" },
     { name: "Shiraz", label: "Shiraz" },
   ]);
 
   const handleSearchValue = (value: string) => {
-    if (value.length === 0) setCopyModalData(modalData);
-    else {
-      let res = modalData.filter((el) => el.label.includes(value));
-      setCopyModalData(res);
-    }
+    let res = pureData.filter((el) => el.label.includes(value));
+    setModalData(res);
   };
 
   <SingleSelectButtonModal
@@ -59,20 +58,21 @@ export interface IModalData {
     isShowSearch={true}
     selectedLabel={name}
     showModal={showModal}
-    placeholder="Selecting..."
+    placeholder={fixedTxt}
     label={"Please select city name"}
-    modalData={copyModalData as IModalData[]}
-    onDeleteValue={() => setName("Selecting...")}
+    modalData={modalData as IModalData[]}
+    onDeleteValue={() => setName(fixedTxt)}
     onChangeText={(value: string) => handleSearchValue(value)}
     onSelectItem={(item: any) => {
       // selected item
-      console.log({ item });
+      // console.log({ item });
       setName(item.label);
 
       // close modal
       setShowModal(false);
     }}
     onPressShowModal={(value: boolean) => {
+      setModalData(pureData);
       setShowModal(value);
     }}
   />
