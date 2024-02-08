@@ -1,3 +1,4 @@
+import AppAvatar from "./AppAvatar";
 import AppFlatList from "./AppFlatList";
 import AppSpinner from "./AppSpinner";
 import AppToast from "./AppToast";
@@ -9,6 +10,7 @@ import RowItem from "./RowItem";
 import WrapIcon from "./WrapIcon";
 
 export {
+  AppAvatar,
   AppFlatList,
   AppSpinner,
   AppToast,

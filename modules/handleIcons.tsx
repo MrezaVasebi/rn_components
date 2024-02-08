@@ -33,6 +33,8 @@ export const handleIcons = (
       return <Entypo name="video" size={size} color={color} />;
     case "language":
       return <Entypo name="language" size={size} color={color} />;
+    case "edit":
+      return <Entypo name="camera" size={size} color={color} />;
     default:
       return null;
   }
