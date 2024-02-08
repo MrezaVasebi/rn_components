@@ -1,4 +1,5 @@
 import AppAvatar from "./AppAvatar";
+import AppDivider from "./AppDivider";
 import AppFlatList from "./AppFlatList";
 import AppProgress from "./AppProgress";
 import AppSpinner from "./AppSpinner";
@@ -12,6 +13,7 @@ import WrapIcon from "./WrapIcon";
 
 export {
   AppAvatar,
+  AppDivider,
   AppFlatList,
   AppProgress,
   AppSpinner,
