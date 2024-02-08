@@ -12,8 +12,10 @@ import SingleSelectButtonModal from "./SingleSelectButtonModal";
 import SwitchButton from "./SwitchButton";
 import TabButton from "./TabButton";
 import ThreeTabButton from "./ThreeTabButton";
+import SwitchButtonWithLabel from "./SwitchButtonWithLabel";
 
 export {
+  SwitchButtonWithLabel,
   AppLoadingButton,
   ButtonWrapper,
   CheckBoxButton,

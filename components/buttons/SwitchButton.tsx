@@ -3,14 +3,12 @@ import { StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors, appRadius } from "../../utils";
 import ButtonWrapper from "./ButtonWrapper";
 
-interface ISwitchButton {
+export interface ISwitchButton {
   btnStyle?: {};
   isSelected: boolean;
 }
 
 const SwitchButton = (props: ISwitchButton & TouchableOpacityProps) => {
-  // let { isSelected, onPress, btnStyle } = props;
-
   let style: object = {};
   if (props.isSelected) style = { right: 5, backgroundColor: appColors.red };
   else style = { left: 5, backgroundColor: appColors.white };
