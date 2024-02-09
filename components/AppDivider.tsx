@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { appColors } from "../utils";
 
@@ -6,7 +6,7 @@ const AppDivider = ({ rootStyle }: { rootStyle?: object }) => {
   return <View style={{ ...styles.rootStyle, ...rootStyle }} />;
 };
 
-export default AppDivider;
+export default memo(AppDivider);
 
 const styles = StyleSheet.create({
   rootStyle: {

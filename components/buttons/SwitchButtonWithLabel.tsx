@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { AppText } from "../texts";
 import SwitchButton, { ISwitchButton } from "./SwitchButton";
@@ -21,7 +21,7 @@ const SwitchButtonWithLabel = (
   );
 };
 
-export default SwitchButtonWithLabel;
+export default memo(SwitchButtonWithLabel);
 
 const styles = StyleSheet.create({
   rootStyle: {

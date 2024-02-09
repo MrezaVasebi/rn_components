@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
   OpaqueColorValue,
   StyleSheet,
@@ -42,7 +42,7 @@ const IconWithLabelButton = (
   );
 };
 
-export default IconWithLabelButton;
+export default memo(IconWithLabelButton);
 
 const styles = StyleSheet.create({
   rootStyle: {

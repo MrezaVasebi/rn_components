@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from "react-native";
 import { appColors, appRadius } from "../utils";
 import { AppText, AppTitle } from "./texts";
@@ -58,7 +58,7 @@ const AppToast = (props: IAppToast) => {
   );
 };
 
-export default AppToast;
+export default memo(AppToast);
 
 const styles = StyleSheet.create({
   root: {

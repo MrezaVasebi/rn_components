@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { appColors } from "../utils";
 import WrapIcon from "./WrapIcon";
@@ -113,7 +113,7 @@ const AppMultiSelect = <D,>(props: IAppMultiSelect<D>) => {
   );
 };
 
-export default AppMultiSelect;
+export default memo(AppMultiSelect);
 
 const styles = StyleSheet.create({
   rootStyle: {},

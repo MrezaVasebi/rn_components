@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ColorValue, StyleSheet, View } from "react-native";
 import { appColors } from "../utils";
 
@@ -27,7 +27,7 @@ const AppProgress = (props: IAppProgress) => {
   );
 };
 
-export default AppProgress;
+export default memo(AppProgress);
 
 const styles = StyleSheet.create({
   rootStyle: {

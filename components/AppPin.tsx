@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -87,7 +87,7 @@ const AppPin = (props: IAppPin) => {
   );
 };
 
-export default AppPin;
+export default memo(AppPin);
 
 const styles = StyleSheet.create({
   container: {

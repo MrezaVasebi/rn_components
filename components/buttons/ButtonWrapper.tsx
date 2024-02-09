@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -22,7 +22,7 @@ const ButtonWrapper = (props: IButtonWrapper & TouchableOpacityProps) => {
   );
 };
 
-export default ButtonWrapper;
+export default memo(ButtonWrapper);
 
 const styles = StyleSheet.create({
   rootStyle: {},

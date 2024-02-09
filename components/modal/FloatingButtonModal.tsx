@@ -21,7 +21,7 @@ const FloatingButtonModal = (props: IFloatingButton) => {
             <AppFlatList
               data={props.menu}
               separatedHeight={10}
-              renderItem={({ item }) => {
+              renderItem={({ item }: { item: any }) => {
                 return (
                   <ButtonWrapper
                     btnStyle={styles.itemStyle}

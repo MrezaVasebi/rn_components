@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ColorValue, FlatList, FlatListProps, StyleSheet } from "react-native";
 import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
@@ -39,7 +39,7 @@ const AppFlatList = <ItemT,>(props: IAppFlatList & FlatListProps<ItemT>) => {
   );
 };
 
-export default AppFlatList;
+export default memo(AppFlatList);
 
 const styles = StyleSheet.create({
   contentStyle: {},

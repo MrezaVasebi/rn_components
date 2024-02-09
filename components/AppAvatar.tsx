@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Image, StyleSheet, TouchableOpacityProps, View } from "react-native";
 import { appColors } from "../utils";
 import WrapIcon from "./WrapIcon";
@@ -42,7 +42,7 @@ const AppAvatar = (props: IAppButton & TouchableOpacityProps) => {
   );
 };
 
-export default AppAvatar;
+export default memo(AppAvatar);
 
 const styles = StyleSheet.create({
   rootStyle: {

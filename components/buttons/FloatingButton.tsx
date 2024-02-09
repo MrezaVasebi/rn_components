@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TouchableOpacityProps } from "react-native";
 import { appColors } from "../../utils";
 import WrapIcon from "../WrapIcon";
@@ -67,7 +67,7 @@ const FloatingButton = (props: IFloatingButton & TouchableOpacityProps) => {
   );
 };
 
-export default FloatingButton;
+export default memo(FloatingButton);
 
 const styles = StyleSheet.create({
   rootStyle: {

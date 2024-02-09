@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, TextInput, TextInputProps } from "react-native";
 import { appColors, appPadding, appRadius } from "../../utils";
 
@@ -18,7 +18,7 @@ const InputWrapper = (props: ITextInput & TextInputProps) => {
   );
 };
 
-export default InputWrapper;
+export default memo(InputWrapper);
 
 const styles = StyleSheet.create({
   style: {
