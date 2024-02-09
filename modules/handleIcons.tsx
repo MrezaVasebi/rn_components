@@ -37,6 +37,8 @@ export const handleIcons = (
       return <Entypo name="camera" size={size} color={color} />;
     case "down":
       return <AntDesign name="caretdown" size={size} color={color} />;
+    case "check":
+      return <Entypo name="check" size={size} color={color} />;
     default:
       return null;
   }

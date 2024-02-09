@@ -1,6 +1,7 @@
 import AppAvatar from "./AppAvatar";
 import AppDivider from "./AppDivider";
 import AppFlatList from "./AppFlatList";
+import AppMultiSelect from "./AppMultiSelect";
 import AppProgress from "./AppProgress";
 import AppSpinner from "./AppSpinner";
 import AppToast from "./AppToast";
@@ -14,8 +15,7 @@ import WrapIcon from "./WrapIcon";
 export {
   AppAvatar,
   AppDivider,
-  AppFlatList,
-  AppProgress,
+  AppFlatList, AppMultiSelect, AppProgress,
   AppSpinner,
   AppToast,
   FooterLoading,
@@ -23,5 +23,6 @@ export {
   NoData,
   RootScreen,
   RowItem,
-  WrapIcon,
+  WrapIcon
 };
+
