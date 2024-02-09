@@ -13,19 +13,21 @@ import SimpleInput from "./SimpleInput";
 
 interface IInputWithClearButton {
   label: string;
-  root?: object;
+  rootStyle?: object;
+  inputStyle?: object;
   showLabel?: boolean;
   onPressClear: () => void;
+  inputContainerStyle?: object;
 }
 
 const InputWithClearButton = (
   props: IInputWithClearButton & TextInputProps & TouchableOpacityProps
 ) => {
   return (
-    <View style={{ ...styles.root, ...props.root }}>
+    <View style={{ ...styles.rootStyle, ...props.rootStyle }}>
       <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
-      <View style={{ ...styles.inputContainer }}>
+      <View style={{ ...styles.inputContainerStyle }}>
         <ButtonWrapper
           onPress={props.onPressClear}
           btnStyle={styles.clearStyle}
@@ -37,7 +39,7 @@ const InputWithClearButton = (
           value={props.value}
           placeholder={props.placeholder}
           onChangeText={props.onChangeText}
-          inputStyle={{ ...styles.inputStyle }}
+          inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
         />
       </View>
     </View>
@@ -47,8 +49,8 @@ const InputWithClearButton = (
 export default memo(InputWithClearButton);
 
 const styles = StyleSheet.create({
-  root: {},
-  inputContainer: {
+  rootStyle: {},
+  inputContainerStyle: {
     borderWidth: 0.5,
     overflow: "hidden",
     alignItems: "center",

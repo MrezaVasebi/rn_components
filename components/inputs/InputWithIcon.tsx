@@ -11,10 +11,11 @@ import ShowLabel from "./ShowLabel";
 import SimpleInput from "./SimpleInput";
 
 interface IInputWithIcon {
-  root?: {};
+  rootStyle?: {};
   inputStyle?: {};
   iconName: string;
   showLabel?: boolean;
+  inputContainerStyle?: {};
   size?: number | undefined;
   label?: string | undefined;
   color?: string | OpaqueColorValue;
@@ -22,10 +23,12 @@ interface IInputWithIcon {
 
 const InputWithIcon = (props: IInputWithIcon & TextInputProps) => {
   return (
-    <>
+    <View style={{ ...props.rootStyle }}>
       <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
-      <View style={{ ...styles.root, ...props.root }}>
+      <View
+        style={{ ...styles.inputContainerStyle, ...props.inputContainerStyle }}
+      >
         <SimpleInput
           value={props.value}
           placeholder={props.placeholder}
@@ -35,19 +38,19 @@ const InputWithIcon = (props: IInputWithIcon & TextInputProps) => {
 
         <WrapIcon
           color={props.color}
-          iconName={props.iconName}
           size={props.size ?? 20}
+          iconName={props.iconName}
           rootStyle={styles.iconStyle}
         />
       </View>
-    </>
+    </View>
   );
 };
 
 export default memo(InputWithIcon);
 
 const styles = StyleSheet.create({
-  root: {
+  inputContainerStyle: {
     height: 45,
     borderWidth: 0.5,
     overflow: "hidden",
