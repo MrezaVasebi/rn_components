@@ -104,13 +104,20 @@ const SingleSelectButtonModal = <D,>(
           />
         </ButtonWrapper>
 
-        {props.selectedLabel !== props.placeholder && (
+        {props.selectedLabel !== props.placeholder ? (
           <ButtonWrapper
+            btnStyle={styles.iconStyle}
             onPress={props.onDeleteValue}
-            btnStyle={styles.deleteStyle}
           >
             <WrapIcon iconName="close" size={20} />
           </ButtonWrapper>
+        ) : (
+          <WrapIcon
+            size={13}
+            iconName="down"
+            color={appColors.grey}
+            rootStyle={styles.iconStyle}
+          />
         )}
       </View>
 
@@ -178,7 +185,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     justifyContent: "center",
   },
-  deleteStyle: {
+  iconStyle: {
     width: 30,
     marginLeft: 5,
     alignItems: "center",

@@ -138,10 +138,14 @@ const MultiSelectButtonModal = <D,>(
               })}
             </View>
           ) : (
-            <AppText
-              label={props.placeholder}
-              lblStyle={{ color: appColors.grey }}
-            />
+            <View style={styles.noItemStyle}>
+              <AppText
+                label={props.placeholder}
+                lblStyle={{ color: appColors.grey }}
+              />
+
+              <WrapIcon size={13} iconName="down" color={appColors.grey} />
+            </View>
           )}
         </ButtonWrapper>
       </View>
@@ -199,6 +203,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: appRadius.m,
     borderColor: appColors.grey,
+  },
+  noItemStyle: {
+    paddingRight: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   showModalStyle: {
     flex: 1,
