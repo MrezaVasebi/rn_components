@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { FlatList } from "react-native";
 import { useInstaExplorerLayout } from "../../custom-hooks";
 import BigItemInLeft from "./BigItemInLeft";
@@ -88,4 +88,4 @@ const InstaExplorerLayout = (props: IInstaExplorerLayout) => {
   );
 };
 
-export default InstaExplorerLayout;
+export default memo(InstaExplorerLayout);

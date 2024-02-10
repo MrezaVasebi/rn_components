@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import EachItem from "./EachItem";
 
 interface IFinalItem {
@@ -17,4 +17,4 @@ const FinalItem = (props: IFinalItem) => {
   );
 };
 
-export default FinalItem;
+export default memo(FinalItem);

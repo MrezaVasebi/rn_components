@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import FinalItem from "./FinalItem";
 import { IComponent } from "./InstaExplorerLayout";
@@ -31,7 +31,7 @@ const BigItemInLeft = (props: IComponent) => {
   );
 };
 
-export default BigItemInLeft;
+export default memo(BigItemInLeft);
 
 const styles = StyleSheet.create({
   row: { flexDirection: "row", width: "100%" },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet } from "react-native";
 import { ButtonWrapper } from "../buttons";
 import { AppText } from "../texts";
@@ -29,7 +29,7 @@ const EachItem = (props: IEachItem) => {
   );
 };
 
-export default EachItem;
+export default memo(EachItem);
 
 const styles = StyleSheet.create({
   itemStyle: {
