@@ -4,6 +4,7 @@ import EachItem from "./EachItem";
 interface IFinalItem {
   data: any;
   itemLbl: string;
+  children: React.ReactNode;
   onPressItem: (value: any) => void;
 }
 
@@ -12,6 +13,7 @@ const FinalItem = (props: IFinalItem) => {
     <EachItem
       data={props.data}
       itemLbl={props.itemLbl}
+      children={props.children}
       onPressItem={props.onPressItem}
     />
   );

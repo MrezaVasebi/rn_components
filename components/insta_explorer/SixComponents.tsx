@@ -9,12 +9,13 @@ const smallWidth = width / 3;
 const SixComponents = (props: IComponent) => {
   return (
     <View style={[styles.row, styles.rowWrap]}>
-      {props.item?.data?.map((x: any, index: number) => (
+      {props?.item?.data?.map((x: any, index: number) => (
         <View key={index} style={styles.sixRowStyle}>
           <FinalItem
             data={x}
-            itemLbl={props.itemLbl}
-            onPressItem={props.onPressItem}
+            itemLbl={props?.itemLbl}
+            children={props?.children}
+            onPressItem={props?.onPressItem}
           />
         </View>
       ))}

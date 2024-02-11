@@ -6,6 +6,7 @@ import { AppText } from "../texts";
 interface IEachItem {
   data: any;
   itemLbl: string;
+  children: React.ReactNode;
   onPressItem: (value: any) => void;
 }
 
@@ -16,7 +17,9 @@ const EachItem = (props: IEachItem) => {
         btnStyle={styles.itemStyle}
         onPress={() => props.onPressItem(props.data)}
       >
-        {typeof props.data === "object" ? (
+        {props.children ? (
+          props.children
+        ) : typeof props.data === "object" ? (
           <AppText
             lblStyle={{ fontSize: 25 }}
             label={props.data[props.itemLbl]}
