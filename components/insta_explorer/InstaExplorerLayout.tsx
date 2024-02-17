@@ -5,44 +5,34 @@ import SixComponents from "./SixComponents";
 import ThreeComponents from "./ThreeComponents";
 
 /** how to use this component
-// let data = [
-//   { lbl: "A" },
-//   { lbl: "B" },
-//   { lbl: "C" },
-//   { lbl: "D" },
-//   { lbl: "E" },
-//   { lbl: "F" },
-//   { lbl: "G" },
-//   { lbl: "H" },
-//   { lbl: "I" },
-// ];
+   <InstaExplorerLayout
+    onPressItem={() => {}}
+    data={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+  /> 
 
-// let data = [1, 2, 3, 4, 5];
-// let data = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 1, 2, 3, 4, 5, 6];
+  <InstaExplorerLayout
+    onPressItem={() => {}}
+    data={["a", "b", "c", "d", "e", "f", "g"]}
+  /> 
 
-<InstaExplorerLayout
-  itemLbl="name"
-  data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
-  onPressItem={(value: any) =>
-    console.log(JSON.stringify(value, null, 2))
-  }
-/>
+  <InstaExplorerLayout
+    itemLbl="name"
+    onPressItem={() => {}}
+    data={[{ name: "a" }, { name: "b" }, { name: "c" }]}
+  /> 
 
-Or
-
-<InstaExplorerLayout
-  itemLbl="name"
-  data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
-  onPressItem={(value: any) =>
-    console.log(JSON.stringify(value, null, 2))
-  }>
-  <AppText label="Hi" />
-</InstaExplorerLayout>
+  <InstaExplorerLayout
+    itemLbl="name"
+    onPressItem={() => {}}
+    data={[{ name: "a" }, { name: "b" }, { name: "c" }]}
+  >
+    <AppText label="Hi" />
+  </InstaExplorerLayout> 
  */
 
 export interface IInstaExplorerLayout {
   data: any;
-  itemLbl: string;
+  itemLbl?: string;
   children?: React.ReactNode;
   onPressItem: (value: any) => void;
 }
@@ -72,8 +62,8 @@ const InstaExplorerLayout = (props: IInstaExplorerLayout) => {
             <ThreeComponents
               item={item}
               isRight={true}
-              itemLbl={props.itemLbl}
               children={props.children}
+              itemLbl={props.itemLbl ?? ""}
               onPressItem={props.onPressItem}
             />
           );
@@ -81,8 +71,8 @@ const InstaExplorerLayout = (props: IInstaExplorerLayout) => {
           return (
             <SixComponents
               item={item}
-              itemLbl={props.itemLbl}
               children={props.children}
+              itemLbl={props.itemLbl ?? ""}
               onPressItem={props.onPressItem}
             />
           );
@@ -91,8 +81,8 @@ const InstaExplorerLayout = (props: IInstaExplorerLayout) => {
             <ThreeComponents
               item={item}
               isRight={false}
-              itemLbl={props.itemLbl}
               children={props.children}
+              itemLbl={props.itemLbl ?? ""}
               onPressItem={props.onPressItem}
             />
           );
