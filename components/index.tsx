@@ -6,6 +6,7 @@ import AppPin from "./AppPin";
 import AppProgress from "./AppProgress";
 import AppSpinner from "./AppSpinner";
 import AppToast from "./AppToast";
+import CollapsedMenu from "./CollapsedMenu";
 import FooterLoading from "./FooterLoading";
 import ItemSeparator from "./ItemSeparator";
 import NoData from "./NoData";
@@ -22,6 +23,7 @@ export {
   AppProgress,
   AppSpinner,
   AppToast,
+  CollapsedMenu,
   FooterLoading,
   ItemSeparator,
   NoData,
