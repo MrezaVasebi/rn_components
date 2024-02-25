@@ -1,14 +1,22 @@
 import React, { memo } from "react";
-import { Image, StyleSheet, TouchableOpacityProps, View } from "react-native";
+import {
+  Image,
+  OpaqueColorValue,
+  StyleSheet,
+  TouchableOpacityProps,
+  View,
+} from "react-native";
 import { appColors } from "../utils";
 import WrapIcon from "./WrapIcon";
 import { ButtonWrapper } from "./buttons";
-import { AppText } from "./texts";
 
 interface IAppButton {
-  imgUrl: string;
+  imgUrl?: string;
   rootStyle?: {};
+  iconName?: string;
+  iconSize?: number;
   isShowEditButton?: boolean;
+  iconColor?: string | OpaqueColorValue;
 }
 
 const AppAvatar = (props: IAppButton & TouchableOpacityProps) => {
@@ -36,7 +44,15 @@ const AppAvatar = (props: IAppButton & TouchableOpacityProps) => {
           )}
         </>
       ) : (
-        <AppText label="Upload Img" />
+        <>
+          <WrapIcon
+            size={props.iconSize ?? 35}
+            iconName={props.iconName ?? "user"}
+            color={props.iconColor ?? appColors.black}
+          />
+
+          {/* <AppText label="Upload Img" lblStyle={{ marginTop: 10 }} /> */}
+        </>
       )}
     </ButtonWrapper>
   );
@@ -46,11 +62,12 @@ export default memo(AppAvatar);
 
 const styles = StyleSheet.create({
   rootStyle: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    borderWidth: 0.5,
+    width: 80,
+    height: 80,
+    borderWidth: 1,
+    borderRadius: 40,
     overflow: "hidden",
+    borderColor: appColors.lightGrey,
   },
   imgStyle: {
     width: "100%",
