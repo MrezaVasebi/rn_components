@@ -1,11 +1,26 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacityProps, View } from "react-native";
+import {
+  StyleSheet,
+  type TouchableOpacityProps,
+  View,
+  type ViewProps,
+} from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
 
+// how to use component
+/*
+  <LineTabButton
+    lblLeft="left"
+    lblRight="right"
+    tabName={tabName}
+    onPressLeft={() => setTabName("left")}
+    onPressRight={() => setTabName("right")}
+  />
+*/
+
 interface ILineTabButton {
-  root?: object;
   tabName: string;
   lblLeft: string;
   lblRight: string;
@@ -19,41 +34,39 @@ interface IBtn {
   label: string;
   tabName: string;
   lblStyle?: object;
-  btnStyle?: object;
 }
 
 const Btn = (props: IBtn & TouchableOpacityProps) => {
-  let { label, tabName, onPress, btnStyle, lblStyle } = props;
-
+  let { label, tabName, lblStyle } = props;
   return (
     <ButtonWrapper
-      onPress={onPress}
-      btnStyle={{
-        ...styles.btnStyle,
-        ...btnStyle,
-        borderBottomWidth: tabName === label ? 2 : 0,
-      }}
+      onPress={props.onPress}
+      style={[
+        styles.btnStyle,
+        props.style,
+        { borderBottomWidth: tabName === label ? 2 : 0 },
+      ]}
     >
-      <AppText label={label} lblStyle={{ ...styles.lblStyle, ...lblStyle }} />
+      <AppText label={label} style={{ ...styles.lblStyle, ...lblStyle }} />
     </ButtonWrapper>
   );
 };
 
-const LineTabButton = (props: ILineTabButton) => {
+const LineTabButton = (props: ILineTabButton & ViewProps) => {
   return (
-    <View style={{ ...styles.root, ...props.root }}>
+    <View style={[styles.root, props.style]}>
       <Btn
-        tabName={props.tabName}
-        onPress={props.onPressLeft}
         label={props.lblLeft}
-        btnStyle={props.btnStyleLeft}
+        tabName={props.tabName}
+        style={props.btnStyleLeft}
+        onPress={props.onPressLeft}
       />
 
       <Btn
-        tabName={props.tabName}
-        onPress={props.onPressRight}
         label={props.lblRight}
-        btnStyle={props.btnStyleRight}
+        tabName={props.tabName}
+        style={props.btnStyleRight}
+        onPress={props.onPressRight}
       />
     </View>
   );

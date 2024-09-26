@@ -1,18 +1,15 @@
 import React, { memo } from "react";
+import { TextProps } from "react-native";
 import { AppText } from "../texts";
 
 interface IShowLabel {
-  lblStyle?: {};
   isLabelShow?: boolean;
   label: string | undefined;
 }
 
-const ShowLabel = (props: IShowLabel) => {
+const ShowLabel = (props: IShowLabel & TextProps) => {
   return props.isLabelShow ? (
-    <AppText
-      label={props.label}
-      lblStyle={{ marginBottom: 8, ...props.lblStyle }}
-    />
+    <AppText label={props.label} style={[{ marginBottom: 8 }, props.style]} />
   ) : null;
 };
 

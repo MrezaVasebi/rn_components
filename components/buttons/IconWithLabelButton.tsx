@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import {
   OpaqueColorValue,
   StyleSheet,
-  TouchableOpacityProps,
+  type TouchableOpacityProps,
 } from "react-native";
 import { appRadius } from "../../utils";
 import WrapIcon from "../WrapIcon";
@@ -13,7 +13,6 @@ interface IIconWithLabelButton {
   label: string;
   iconName: string;
   lblStyle?: object;
-  rootStyle?: object;
   iconStyle?: object;
   size?: number | undefined;
   iconColor?: string | OpaqueColorValue;
@@ -25,11 +24,12 @@ const IconWithLabelButton = (
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      btnStyle={{ ...styles.rootStyle, ...props.rootStyle }}
+      disabled={props.disabled}
+      style={[styles.rootStyle, props.style]}
     >
       <AppText
-        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
         label={props.label}
+        style={{ ...styles.lblStyle, ...props.lblStyle }}
       />
 
       <WrapIcon

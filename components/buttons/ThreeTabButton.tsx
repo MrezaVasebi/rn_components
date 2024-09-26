@@ -17,7 +17,6 @@ interface ITabButton {
 }
 
 interface ITabs {
-  btnStyle: {};
   label: string;
   tabName: string;
 }
@@ -27,17 +26,20 @@ const ThreeTabButton = (props: ITabButton) => {
     return (
       <ButtonWrapper
         onPress={props.onPress}
-        btnStyle={{
-          ...styles.tabStyle,
-          backgroundColor:
-            props.label === props.tabName ? appColors.red : appColors.white,
-          ...props.btnStyle,
-        }}
+        style={[
+          styles.tabStyle,
+          {
+            backgroundColor:
+              props.label === props.tabName ? appColors.red : appColors.white,
+            borderWidth: props.label === props.tabName ? 0 : 1,
+          },
+          props.style,
+        ]}
       >
         <AppText
           label={props.label}
-          lblStyle={{
-            fontSize: props.label === props.tabName ? 18 : 15,
+          style={{
+            // fontSize: props.label === props.tabName ? 18 : 15,
             color:
               props.label === props.tabName ? appColors.white : appColors.red,
           }}
@@ -53,7 +55,7 @@ const ThreeTabButton = (props: ITabButton) => {
           tabName={props.tabName}
           label={props.leftLabel}
           onPress={props.onPressLeft}
-          btnStyle={{
+          style={{
             borderTopRightRadius: 5,
             borderBottomRightRadius: 5,
           }}
@@ -63,7 +65,7 @@ const ThreeTabButton = (props: ITabButton) => {
           tabName={props.tabName}
           label={props.centerLabel}
           onPress={props.onPressCenter}
-          btnStyle={{
+          style={{
             borderRadius: 0,
           }}
         />
@@ -72,7 +74,7 @@ const ThreeTabButton = (props: ITabButton) => {
           tabName={props.tabName}
           label={props.rightLabel}
           onPress={props.onPressRight}
-          btnStyle={{
+          style={{
             borderTopLeftRadius: 5,
             borderBottomLeftRadius: 5,
           }}

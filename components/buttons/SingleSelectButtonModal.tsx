@@ -85,17 +85,17 @@ const SingleSelectButtonModal = <D,>(
     <View style={{ ...styles.rootStyle, ...props.rootStyle }}>
       <AppText
         label={props.label}
-        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
+        style={{ ...styles.lblStyle, ...props.lblStyle }}
       />
 
       <View style={{ ...styles.innerStyle, ...props.innerStyle }}>
         <ButtonWrapper
-          btnStyle={styles.showModalStyle}
+          style={styles.showModalStyle}
           onPress={() => props.onPressShowModal(true)}
         >
           <AppText
             label={props.selectedLabel}
-            lblStyle={{
+            style={{
               color:
                 props.selectedLabel === props.placeholder
                   ? appColors.grey
@@ -105,10 +105,7 @@ const SingleSelectButtonModal = <D,>(
         </ButtonWrapper>
 
         {props.selectedLabel !== props.placeholder ? (
-          <ButtonWrapper
-            btnStyle={styles.iconStyle}
-            onPress={props.onDeleteValue}
-          >
+          <ButtonWrapper style={styles.iconStyle} onPress={props.onDeleteValue}>
             <WrapIcon iconName="close" size={20} />
           </ButtonWrapper>
         ) : (
@@ -133,7 +130,7 @@ const SingleSelectButtonModal = <D,>(
               <View style={{ marginBottom: 15 }}>
                 <SimpleInput
                   placeholder="Search"
-                  inputStyle={styles.inputStyle}
+                  style={styles.inputStyle}
                   onChangeText={props.onChangeText}
                 />
               </View>
@@ -148,10 +145,10 @@ const SingleSelectButtonModal = <D,>(
                     onPress={() => {
                       props.onSelectItem(item);
                     }}
-                    btnStyle={styles.btnStyle}
+                    style={styles.btnStyle}
                   >
                     <AppText
-                      lblStyle={{ fontSize: 15 }}
+                      style={{ fontSize: 15 }}
                       label={item[props.itemLabel]}
                     />
                   </ButtonWrapper>

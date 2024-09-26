@@ -1,12 +1,11 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacityProps, View } from "react-native";
+import { StyleSheet, type TouchableOpacityProps, View } from "react-native";
 import { appColors } from "../../utils";
 import { AppText } from "../texts";
 import ButtonWrapper from "./ButtonWrapper";
 
 interface IRadioButtonProps {
   lblStyle?: {};
-  btnStyle?: {};
   label: string;
   isSelected: boolean;
 }
@@ -15,7 +14,7 @@ const RadioButton = (props: IRadioButtonProps & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
+      style={[styles.btnStyle, props.style]}
     >
       <View style={styles.circleStyle}>
         <View
@@ -28,7 +27,7 @@ const RadioButton = (props: IRadioButtonProps & TouchableOpacityProps) => {
 
       <AppText
         label={props.label}
-        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
+        style={{ ...styles.lblStyle, ...props.lblStyle }}
       />
     </ButtonWrapper>
   );

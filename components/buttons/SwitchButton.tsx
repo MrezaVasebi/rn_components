@@ -4,7 +4,6 @@ import { appColors, appRadius } from "../../utils";
 import ButtonWrapper from "./ButtonWrapper";
 
 export interface ISwitchButton {
-  btnStyle?: {};
   isSelected: boolean;
 }
 
@@ -16,7 +15,7 @@ const SwitchButton = (props: ISwitchButton & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
+      style={[styles.btnStyle, props.style]}
     >
       <View style={{ ...styles.circleStyle, ...style }} />
     </ButtonWrapper>

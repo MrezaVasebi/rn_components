@@ -42,17 +42,14 @@ const AppToast = (props: IAppToast) => {
       <View style={styles.contentStyle}>
         <AppTitle
           label={titleLbl}
-          lblStyle={{
+          style={{
             ...styles.titleStyle,
             ...titleStyle,
             color: setBgColor(),
           }}
         />
 
-        <AppText
-          label={msgLbl}
-          lblStyle={{ ...styles.msgStyle, ...msgStyle }}
-        />
+        <AppText label={msgLbl} style={{ ...styles.msgStyle, ...msgStyle }} />
       </View>
     </View>
   );

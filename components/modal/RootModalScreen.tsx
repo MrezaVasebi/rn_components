@@ -28,7 +28,7 @@ const RootModalScreen = (props: IRootMOdal) => {
             style={{ ...styles.innerStyle, ...innerStyle }}
           >
             <View style={styles.titleContainer}>
-              <AppTitle label={title} lblStyle={styles.lblTitleStyle} />
+              <AppTitle label={title} style={styles.lblTitleStyle} />
             </View>
 
             {children}

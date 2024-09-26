@@ -2,18 +2,19 @@ import React, { memo } from "react";
 import { StyleSheet, TextInput, TextInputProps } from "react-native";
 import { appColors, appPadding, appRadius } from "../../utils";
 
-interface ITextInput {
-  inputStyle?: object;
-}
-
-const InputWrapper = (props: ITextInput & TextInputProps) => {
+const InputWrapper = (props: TextInputProps) => {
   return (
     <TextInput
       value={props.value}
+      editable={props.editable}
+      multiline={props.multiline}
+      focusable={props.focusable}
+      maxLength={props.maxLength}
       placeholder={props.placeholder}
       onChangeText={props.onChangeText}
-      placeholderTextColor={appColors.grey}
-      style={{ ...styles.style, ...props.inputStyle }}
+      style={[styles.style, props.style]}
+      secureTextEntry={props.secureTextEntry}
+      placeholderTextColor={props.placeholderTextColor ?? appColors.grey}
     />
   );
 };

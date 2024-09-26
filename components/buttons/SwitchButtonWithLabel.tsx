@@ -6,6 +6,7 @@ import SwitchButton, { ISwitchButton } from "./SwitchButton";
 interface ISwitchButtonWithLabel {
   label: string;
   lblStyle?: object;
+  btnStyle?: object;
   rootStyle?: object;
 }
 
@@ -14,9 +15,9 @@ const SwitchButtonWithLabel = (
 ) => {
   return (
     <View style={{ ...styles.rootStyle, ...props.rootStyle }}>
-      <SwitchButton isSelected={props.isSelected} btnStyle={props.btnStyle} />
+      <SwitchButton isSelected={props.isSelected} style={props.btnStyle} />
 
-      <AppText label={props.label} lblStyle={props.lblStyle} />
+      <AppText label={props.label} style={props.lblStyle} />
     </View>
   );
 };

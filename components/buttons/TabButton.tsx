@@ -24,16 +24,17 @@ const TabButton = (props: ITabButton) => {
     return (
       <ButtonWrapper
         onPress={props.onPress}
-        btnStyle={{
+        style={{
           ...styles.tabStyle,
           backgroundColor:
             props.label === props.tabName ? appColors.red : appColors.white,
+          borderWidth: props.label === props.tabName ? 0 : 1,
         }}
       >
         <AppText
           label={props.label}
-          lblStyle={{
-            fontSize: props.label === props.tabName ? 18 : 15,
+          style={{
+            // fontSize: props.label === props.tabName ? 18 : 15,
             color:
               props.label === props.tabName ? appColors.white : appColors.red,
           }}

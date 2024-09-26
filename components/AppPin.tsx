@@ -12,7 +12,7 @@ import { AppText } from "./texts";
 
 /**
  * how to use this component
- <PinInputAppPin
+ <AppPin
     pinLength={{
       a: "",
       b: "",
@@ -45,7 +45,7 @@ const AppPin = (props: IAppPin) => {
                     <View style={styles.pinDot} />
                   ) : (
                     <AppText
-                      lblStyle={{ fontSize: 25 }}
+                      style={{ fontSize: 25 }}
                       label={hooks.pin[pinKey as keyof typeof hooks.pin]}
                     />
                   )
@@ -77,7 +77,7 @@ const AppPin = (props: IAppPin) => {
           <View key={index} style={styles.btnContainer}>
             <TouchableWithoutFeedback onPress={() => hooks.onEnterPin(btn)}>
               <View style={styles.eachBtnStyle}>
-                <AppText label={btn.toString()} lblStyle={styles.btnTxt} />
+                <AppText label={btn.toString()} style={styles.btnTxt} />
               </View>
             </TouchableWithoutFeedback>
           </View>

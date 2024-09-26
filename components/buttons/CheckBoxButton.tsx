@@ -8,7 +8,6 @@ import ButtonWrapper from "./ButtonWrapper";
 interface ICheckBoxButton {
   label: string;
   lblStyle?: object;
-  btnStyle?: object;
   iconName?: string;
   iconSize?: number;
   iconColor?: string;
@@ -19,7 +18,8 @@ const CheckBoxButton = (props: ICheckBoxButton & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
+      disabled={props.disabled}
+      style={[styles.btnStyle, props.style]}
     >
       <View style={styles.circleStyle}>
         {props.isSelected && (
@@ -33,7 +33,7 @@ const CheckBoxButton = (props: ICheckBoxButton & TouchableOpacityProps) => {
 
       <AppText
         label={props.label}
-        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
+        style={{ ...styles.lblStyle, ...props.lblStyle }}
       />
     </ButtonWrapper>
   );

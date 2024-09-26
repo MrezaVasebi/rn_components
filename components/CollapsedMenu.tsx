@@ -68,7 +68,7 @@ const CollapsedMenu = <D,>(props: ICollapsedMenu<D>) => {
               >
                 <AppText
                   label={item[props?.itemTitle]}
-                  lblStyle={{
+                  style={{
                     ...styles.lblTitleStyle,
                     ...props?.lblTitleStyle,
                   }}

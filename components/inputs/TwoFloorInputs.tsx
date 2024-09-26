@@ -28,10 +28,7 @@ const TwoFloorInputs = (props: ITwoFloorInput & TextInputProps) => {
           value={props.valueTop}
           placeholder={props.placeholderTop}
           onChangeText={props.onChangeTextTop}
-          inputStyle={{
-            ...styles.commonStyle,
-            ...props.inputStyleTop,
-          }}
+          style={[styles.commonStyle, props.inputStyleTop]}
         />
 
         <View style={styles.lineStyle} />
@@ -40,10 +37,7 @@ const TwoFloorInputs = (props: ITwoFloorInput & TextInputProps) => {
           value={props.valueBottom}
           placeholder={props.placeholderBottom}
           onChangeText={props.onChangeTextBottom}
-          inputStyle={{
-            ...styles.commonStyle,
-            ...props.inputStyleBottom,
-          }}
+          style={[styles.commonStyle, props.inputStyleBottom]}
         />
       </View>
     </>

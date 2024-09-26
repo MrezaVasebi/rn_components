@@ -24,7 +24,7 @@ import { AppText } from "./texts";
     { name: "I", isSelected: false },
   ]);
 
-  let handleSelectedItem = (item: IData) => {
+  let handleSelectedItem = (item: any) => {
     let res = data.map((el) => {
       return el === item ? { ...el, isSelected: !el.isSelected } : { ...el };
     });
@@ -69,7 +69,7 @@ const AppMultiSelect = <D,>(props: IAppMultiSelect<D>) => {
               label={`Selected count: ${props?.data
                 ?.filter((el: any) => el[props.selectedLabel])
                 .length.toString()}`}
-              lblStyle={{ marginBottom: 10 }}
+              style={{ marginBottom: 10 }}
             />
           )}
 
@@ -84,8 +84,8 @@ const AppMultiSelect = <D,>(props: IAppMultiSelect<D>) => {
               return (
                 <ButtonWrapper
                   key={index}
-                  onPress={() => props.onPressItem(el)}
-                  btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
+                  onPress={() => props.onPressItem(el as any)}
+                  style={{ ...styles.btnStyle, ...props.btnStyle }}
                 >
                   {el[props.selectedLabel] && (
                     <View style={styles.checkStyle}>
@@ -99,7 +99,7 @@ const AppMultiSelect = <D,>(props: IAppMultiSelect<D>) => {
 
                   <AppText
                     label={el[props.itemLabel]}
-                    lblStyle={{
+                    style={{
                       color: el.isSelected ? appColors.red : appColors.black,
                       ...props.lblStyle,
                     }}

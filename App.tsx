@@ -13,13 +13,13 @@ const App = () => {
     return null;
   }
 
-  return <RootScreen rootStyle={styles.rootStyle}></RootScreen>;
+  return <RootScreen rootStyle={styles.container}></RootScreen>;
 };
 
 export default memo(App);
 
 const styles = StyleSheet.create({
-  rootStyle: {
+  container: {
     margin: appMargin.xl,
   },
 });

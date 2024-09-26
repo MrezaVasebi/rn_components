@@ -9,7 +9,6 @@ import WrapIcon from "../WrapIcon";
 import ButtonWrapper from "./ButtonWrapper";
 
 interface IIconButton {
-  btnStyle?: {};
   iconName: string;
   size?: number | undefined;
   color?: string | OpaqueColorValue;
@@ -19,12 +18,12 @@ const IconButton = (props: IIconButton & TouchableOpacityProps) => {
   return (
     <ButtonWrapper
       onPress={props.onPress}
-      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
+      style={[styles.btnStyle, props.style]}
     >
       <WrapIcon
-        iconName={props.iconName}
         color={props.color}
         size={props.size ?? 20}
+        iconName={props.iconName}
       />
     </ButtonWrapper>
   );

@@ -6,7 +6,6 @@ import ButtonWrapper from "./ButtonWrapper";
 
 interface ISimpleButton {
   label: string;
-  btnStyle?: object;
   lblStyle?: object;
 }
 
@@ -15,9 +14,9 @@ const SimpleButton = (props: ISimpleButton & TouchableOpacityProps) => {
     <ButtonWrapper
       onPress={props.onPress}
       disabled={props.disabled}
-      btnStyle={{ ...styles.btnStyle, ...props.btnStyle }}
+      style={[styles.btnStyle, props.style]}
     >
-      <AppText label={props.label} lblStyle={props.lblStyle} />
+      <AppText label={props.label} style={props.lblStyle} />
     </ButtonWrapper>
   );
 };

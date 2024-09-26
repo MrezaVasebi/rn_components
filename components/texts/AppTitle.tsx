@@ -1,17 +1,9 @@
 import React from "react";
-import { StyleSheet, TextProps } from "react-native";
-import AppText from "./AppText";
+import { StyleSheet, type TextProps } from "react-native";
+import AppText, { IAppText } from "./AppText";
 
-interface IAppTitleProps {
-  label: string | undefined;
-  lblStyle?: object;
-}
-
-const AppTitle = (props: IAppTitleProps & TextProps) => {
-  let { label, lblStyle } = props;
-  return (
-    <AppText label={label} lblStyle={{ ...styles.lblStyle, ...lblStyle }} />
-  );
+const AppTitle = (props: IAppText & TextProps) => {
+  return <AppText label={props.label} style={[styles.lblStyle, props.style]} />;
 };
 
 export default React.memo(AppTitle);

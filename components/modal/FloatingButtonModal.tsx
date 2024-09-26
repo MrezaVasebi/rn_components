@@ -24,7 +24,7 @@ const FloatingButtonModal = (props: IFloatingButton) => {
               renderItem={({ item }: { item: any }) => {
                 return (
                   <ButtonWrapper
-                    btnStyle={styles.itemStyle}
+                    style={styles.itemStyle}
                     onPress={() => {
                       props.onPressItem(item);
 
@@ -34,7 +34,7 @@ const FloatingButtonModal = (props: IFloatingButton) => {
                   >
                     <AppText
                       label={item?.label}
-                      lblStyle={{ color: appColors.white }}
+                      style={{ color: appColors.white }}
                     />
 
                     <WrapIcon
@@ -52,7 +52,7 @@ const FloatingButtonModal = (props: IFloatingButton) => {
 
           <ButtonWrapper
             onPress={() => props.showModalHandler(false)}
-            btnStyle={{ ...styles.rootStyle, ...props.innerButtonStyle }}
+            style={{ ...styles.rootStyle, ...props.innerButtonStyle }}
           >
             <WrapIcon
               iconName="close"
@@ -70,11 +70,11 @@ export default React.memo(FloatingButtonModal);
 
 const styles = StyleSheet.create({
   rootStyle: {
-    right: 0,
-    width: 60,
-    bottom: 0,
-    height: 60,
-    borderRadius: 20,
+    right: 20,
+    width: 45,
+    bottom: 20,
+    height: 45,
+    borderRadius: 10,
     position: "absolute",
     alignItems: "center",
     justifyContent: "center",
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   menuStyle: {
     right: 50,
-    bottom: 80,
+    bottom: 70,
     position: "absolute",
   },
   itemStyle: {

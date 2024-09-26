@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import {
   StyleSheet,
   TouchableOpacity,
-  TouchableOpacityProps,
+  type TouchableOpacityProps,
   View,
 } from "react-native";
 import { appColors, appRadius } from "../../utils";
@@ -51,14 +51,14 @@ interface IMultiSelectButtonModal<D> {
     { name: "shiraz", label: "Shiraz", isChecked: false },
   ];
 
-  const onDeleteSelectedItem = (item: any) => {
+  const onDeleteSelectedItem = (item: IModalData) => {
     let res = modalData.map((el) => {
       return item === el ? { ...el, isChecked: false } : { ...el };
     });
     setModalData(res);
   };
 
-  const onSelectItem = (item: any) => {
+  const onSelectItem = (item: IModalData) => {
     let res = modalData.map((el) => {
       return el === item ? { ...el, isChecked: !el.isChecked } : { ...el };
     });
@@ -108,12 +108,12 @@ const MultiSelectButtonModal = <D,>(
     <View style={{ ...styles.rootStyle }}>
       <AppText
         label={props.label}
-        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
+        style={{ ...styles.lblStyle, ...props.lblStyle }}
       />
 
       <View style={{ ...styles.innerStyle, ...props.innerStyle }}>
         <ButtonWrapper
-          btnStyle={styles.showModalStyle}
+          style={styles.showModalStyle}
           onPress={() => props.onPressShowModal(true)}
         >
           {props.modalData.filter((el: any) => el.isChecked).length > 0 ? (
@@ -141,7 +141,7 @@ const MultiSelectButtonModal = <D,>(
             <View style={styles.noItemStyle}>
               <AppText
                 label={props.placeholder}
-                lblStyle={{ color: appColors.grey }}
+                style={{ color: appColors.grey }}
               />
 
               <WrapIcon size={13} iconName="down" color={appColors.grey} />

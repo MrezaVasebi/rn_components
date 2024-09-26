@@ -28,7 +28,7 @@ const TimerCountDown = (props: ITimerCountDown) => {
         <IconButton
           iconName="play"
           onPress={onStartAgain}
-          btnStyle={styles.iconStyle}
+          style={styles.iconStyle}
         />
       )}
     </View>

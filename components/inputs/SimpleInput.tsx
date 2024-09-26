@@ -1,18 +1,18 @@
 import React, { memo } from "react";
-import { StyleSheet, TextInputProps } from "react-native";
+import { StyleSheet, type TextInputProps } from "react-native";
 import InputWrapper from "./InputWrapper";
 
-interface ISimpleInput {
-  inputStyle?: {};
-}
-
-const SimpleInput = (props: ISimpleInput & TextInputProps) => {
+const SimpleInput = (props: TextInputProps) => {
   return (
     <InputWrapper
       value={props.value}
+      multiline={props.multiline}
+      maxLength={props.maxLength}
       placeholder={props.placeholder}
       onChangeText={props.onChangeText}
-      inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
+      secureTextEntry={props.secureTextEntry}
+      style={[styles.inputStyle, props.style]}
+      placeholderTextColor={props.placeholderTextColor}
     />
   );
 };

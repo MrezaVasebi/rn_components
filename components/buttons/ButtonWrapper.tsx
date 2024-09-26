@@ -2,20 +2,16 @@ import React, { memo } from "react";
 import {
   StyleSheet,
   TouchableOpacity,
-  TouchableOpacityProps,
+  type TouchableOpacityProps,
 } from "react-native";
 
-interface IButtonWrapper {
-  btnStyle?: {};
-}
-
-const ButtonWrapper = (props: IButtonWrapper & TouchableOpacityProps) => {
+const ButtonWrapper = (props: TouchableOpacityProps) => {
   return (
     <TouchableOpacity
       activeOpacity={0.5}
       onPress={props.onPress}
       disabled={props.disabled}
-      style={{ ...styles.rootStyle, ...props.btnStyle }}
+      style={[styles.rootStyle, props.style]}
     >
       {props.children}
     </TouchableOpacity>

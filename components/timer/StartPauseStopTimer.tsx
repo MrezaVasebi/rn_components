@@ -34,8 +34,8 @@ const StartPauseStopTimer = (props: IStartPauseStopTimer) => {
     return (
       <View style={styles.timerStyle}>
         <AppText
+          style={{ fontSize: 15 }}
           label={value < 10 ? "0" + value.toString() : value.toString()}
-          lblStyle={{ fontSize: 15 }}
         />
       </View>
     );
@@ -52,7 +52,7 @@ const StartPauseStopTimer = (props: IStartPauseStopTimer) => {
       <View style={styles.buttonWrapper}>
         <IconButton
           iconName="stop"
-          btnStyle={{ ...styles.iconStyle }}
+          style={{ ...styles.iconStyle }}
           onPress={() => props.onChangeTimerStatus("stop")}
           color={props.timerStatus === "stop" ? appColors.red : appColors.black}
         />
@@ -60,7 +60,7 @@ const StartPauseStopTimer = (props: IStartPauseStopTimer) => {
         <IconButton
           iconName="pause"
           onPress={() => props.onChangeTimerStatus("pause")}
-          btnStyle={{ ...styles.iconStyle, marginHorizontal: 10 }}
+          style={{ ...styles.iconStyle, marginHorizontal: 10 }}
           color={
             props.timerStatus === "pause" ? appColors.red : appColors.black
           }
@@ -68,7 +68,7 @@ const StartPauseStopTimer = (props: IStartPauseStopTimer) => {
 
         <IconButton
           iconName="play"
-          btnStyle={{ ...styles.iconStyle }}
+          style={{ ...styles.iconStyle }}
           onPress={() => props.onChangeTimerStatus("play")}
           color={props.timerStatus === "play" ? appColors.red : appColors.black}
         />

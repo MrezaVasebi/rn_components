@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { StyleSheet, TouchableOpacityProps } from "react-native";
+import { StyleSheet, type TouchableOpacityProps } from "react-native";
 import { appColors } from "../../utils";
 import WrapIcon from "../WrapIcon";
 import { FloatingButtonModal } from "../modal";
@@ -8,17 +8,19 @@ import ButtonWrapper from "./ButtonWrapper";
 // how to use component
 /*
   <FloatingButton
-    menu={[
-      { name: "language", label: "Language", iconName: "language" },
-      { name: "location", label: "Location", iconName: "location" },
-      { name: "video", label: "Video", iconName: "video" },
-    ]}
-    isShowModal={showModal}
-    innerButtonStyle={styles.rootStyle}
-    onPressItem={(item) => console.log(item)}
-    showModalHandler={(value) => setShowModal(value)}
-  />
+        menu={[
+          { name: "language", label: "Language", iconName: "language" },
+          { name: "location", label: "Location", iconName: "location" },
+          { name: "video", label: "Video", iconName: "video" },
+        ]}
+        isShowModal={showModal}
+        onPressItem={(item: any) => console.log(item)}
+        showModalHandler={(value: boolean) => setShowModal(value)}
+        innerButtonStyle={{ flexDirection: "row", backgroundColor: "red" }}
+      />
 */
+
+// point: `rootStyle` in floatingButton and floatingButtonModal should be same.
 
 interface IMenu {
   name: string;
@@ -41,8 +43,9 @@ const FloatingButton = (props: IFloatingButton & TouchableOpacityProps) => {
   return (
     <>
       <ButtonWrapper
+        disabled={props.disabled}
         onPress={() => props.showModalHandler(true)}
-        btnStyle={{ ...styles.rootStyle, zIndex: 1, ...props.rootStyle }}
+        style={[styles.rootStyle, { zIndex: 1 }, props.rootStyle]}
       >
         <WrapIcon
           iconName="plus"
@@ -72,10 +75,10 @@ export default memo(FloatingButton);
 const styles = StyleSheet.create({
   rootStyle: {
     right: 0,
-    width: 60,
+    width: 45,
     bottom: 0,
-    height: 60,
-    borderRadius: 20,
+    height: 45,
+    borderRadius: 10,
     position: "absolute",
     alignItems: "center",
     justifyContent: "center",

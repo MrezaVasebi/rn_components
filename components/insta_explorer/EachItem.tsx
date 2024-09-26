@@ -14,18 +14,15 @@ const EachItem = (props: IEachItem) => {
   return (
     props.data && (
       <ButtonWrapper
-        btnStyle={styles.itemStyle}
+        style={styles.itemStyle}
         onPress={() => props.onPressItem(props.data)}
       >
         {props.children ? (
           props.children
         ) : typeof props.data === "object" ? (
-          <AppText
-            lblStyle={{ fontSize: 25 }}
-            label={props.data[props.itemLbl]}
-          />
+          <AppText style={{ fontSize: 25 }} label={props.data[props.itemLbl]} />
         ) : (
-          <AppText label={props.data} lblStyle={{ fontSize: 25 }} />
+          <AppText label={props.data} style={{ fontSize: 25 }} />
         )}
       </ButtonWrapper>
     )

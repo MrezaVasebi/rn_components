@@ -12,7 +12,7 @@ const NoData = (props: INoData) => {
   let { label = "No data", root, lblStyle } = props;
   return (
     <View style={{ ...styles.root, ...root }}>
-      <AppText lblStyle={{ ...styles.lblStyle, ...lblStyle }} label={label} />
+      <AppText style={{ ...styles.lblStyle, ...lblStyle }} label={label} />
     </View>
   );
 };

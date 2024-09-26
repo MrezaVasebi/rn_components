@@ -14,15 +14,17 @@ const InputWithLabel = (props: IInputWithLabel & TextInputProps) => {
   return (
     <View style={{ ...styles.root, ...props.root }}>
       <AppText
-        lblStyle={{ ...styles.lblStyle, ...props.lblStyle }}
         label={props.label}
+        style={{ ...styles.lblStyle, ...props.lblStyle }}
       />
 
       <SimpleInput
         value={props.value}
+        maxLength={props.maxLength}
         placeholder={props.placeholder}
         onChangeText={props.onChangeText}
-        inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
+        style={[styles.inputStyle, props.style]}
+        placeholderTextColor={props.placeholderTextColor}
       />
     </View>
   );

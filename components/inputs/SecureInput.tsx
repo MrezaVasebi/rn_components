@@ -1,10 +1,5 @@
 import React, { memo } from "react";
-import {
-  StyleSheet,
-  TextInputProps,
-  TouchableOpacityProps,
-  View,
-} from "react-native";
+import { StyleSheet, TextInputProps, View } from "react-native";
 import { handleIcons } from "../../modules";
 import { appColors, appRadius } from "../../utils";
 import { ButtonWrapper } from "../buttons";
@@ -14,24 +9,19 @@ import SimpleInput from "./SimpleInput";
 interface ISecureInput {
   label: string;
   root?: object;
-  isShowText: boolean;
   showLabel?: boolean;
   onPressEye: () => void;
 }
 
-const SecureInput = (
-  props: ISecureInput & TextInputProps & TouchableOpacityProps
-) => {
-  // let { root, label, showLabel, isShowText, onPressEye } = props;
-
+const SecureInput = (props: ISecureInput & TextInputProps) => {
   return (
     <View style={{ ...styles.root, ...props.root }}>
       <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
       <View style={{ ...styles.inputContainer }}>
-        <ButtonWrapper onPress={props.onPressEye} btnStyle={styles.eyeStyle}>
+        <ButtonWrapper onPress={props.onPressEye} style={styles.eyeStyle}>
           {handleIcons(
-            props.isShowText ? "eye" : "eyeoff",
+            props.secureTextEntry ? "eye" : "eyeoff",
             25,
             appColors.black
           )}
@@ -41,7 +31,9 @@ const SecureInput = (
           value={props.value}
           placeholder={props.placeholder}
           onChangeText={props.onChangeText}
-          inputStyle={{ ...styles.inputStyle }}
+          secureTextEntry={props.secureTextEntry}
+          style={[styles.inputStyle, props.style]}
+          placeholderTextColor={props.placeholderTextColor}
         />
       </View>
     </View>

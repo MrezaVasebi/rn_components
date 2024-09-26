@@ -13,11 +13,11 @@ const RowItem = (props: IRowItem) => {
   return (
     <View style={{ ...styles.root, ...props.root }}>
       <View style={{ flex: 0.3 }}>
-        <AppText label={props.label} lblStyle={styles.lblLabel} />
+        <AppText label={props.label} style={styles.lblLabel} />
       </View>
 
       <View style={{ flex: 0.7 }}>
-        <AppText label={props.ans} lblStyle={styles.lblAns} />
+        <AppText label={props.ans} style={styles.lblAns} />
       </View>
     </View>
   );

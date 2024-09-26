@@ -18,9 +18,9 @@ const AppProgress = (props: IAppProgress) => {
     >
       <View
         style={{
-          width: `${props.width}%` ?? 0,
           height: props.height ?? defaultHeight,
           backgroundColor: props.color ?? appColors.red,
+          width: !`${props.width}%` ? 0 : `${props.width}%`,
         }}
       />
     </View>

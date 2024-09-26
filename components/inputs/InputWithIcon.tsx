@@ -31,9 +31,11 @@ const InputWithIcon = (props: IInputWithIcon & TextInputProps) => {
       >
         <SimpleInput
           value={props.value}
+          maxLength={props.maxLength}
           placeholder={props.placeholder}
           onChangeText={props.onChangeText}
-          inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
+          style={[styles.inputStyle, props.inputStyle]}
+          placeholderTextColor={props.placeholderTextColor}
         />
 
         <WrapIcon
@@ -52,6 +54,7 @@ export default memo(InputWithIcon);
 const styles = StyleSheet.create({
   inputContainerStyle: {
     height: 45,
+    backgroundColor: "red",
     borderWidth: 0.5,
     overflow: "hidden",
     alignItems: "center",
@@ -61,6 +64,7 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     flex: 1,
+    backgroundColor: "green",
     borderWidth: 0,
   },
   iconStyle: {

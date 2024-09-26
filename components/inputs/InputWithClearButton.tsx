@@ -28,18 +28,17 @@ const InputWithClearButton = (
       <ShowLabel label={props.label} isLabelShow={props.showLabel} />
 
       <View style={{ ...styles.inputContainerStyle }}>
-        <ButtonWrapper
-          onPress={props.onPressClear}
-          btnStyle={styles.clearStyle}
-        >
+        <ButtonWrapper onPress={props.onPressClear} style={styles.clearStyle}>
           {handleIcons("close", 20, appColors.black)}
         </ButtonWrapper>
 
         <SimpleInput
           value={props.value}
+          maxLength={props.maxLength}
           placeholder={props.placeholder}
           onChangeText={props.onChangeText}
-          inputStyle={{ ...styles.inputStyle, ...props.inputStyle }}
+          placeholderTextColor={props.placeholderTextColor}
+          style={{ ...styles.inputStyle, ...props.inputStyle }}
         />
       </View>
     </View>

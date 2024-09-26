@@ -1,21 +1,19 @@
 import React, { memo } from "react";
-import { StyleSheet, Text, TextProps } from "react-native";
+import { StyleSheet, Text, type TextProps } from "react-native";
 import { appColors } from "../../utils";
 
-interface IAppText {
-  lblStyle?: {};
-  label: string | undefined;
+export interface IAppText {
+  label?: string;
 }
 
 const AppText = (props: IAppText & TextProps) => {
-  let { label, lblStyle } = props;
   return (
     <Text
       ellipsizeMode={props.ellipsizeMode}
       numberOfLines={props.numberOfLines}
-      style={{ ...styles.lblStyle, ...lblStyle }}
+      style={[styles.lblStyle, props.style]}
     >
-      {label}
+      {props.label ?? ""}
     </Text>
   );
 };
