@@ -10,12 +10,13 @@ import RadioButton from "./RadioButton";
 import SimpleButton from "./SimpleButton";
 import SingleSelectButtonModal from "./SingleSelectButtonModal";
 import SwitchButton from "./SwitchButton";
-import TabButton from "./TabButton";
-import ThreeTabButton from "./ThreeTabButton";
 import SwitchButtonWithLabel from "./SwitchButtonWithLabel";
+import SwitchSelectorWithAnimation from "./SwitchSelectorWithAnimation";
+import TabButton from "./TabButton";
+import ThreeSwitchSelectorWithAnimation from "./ThreeSwitchSelectorWithAnimation";
+import ThreeTabButton from "./ThreeTabButton";
 
 export {
-  SwitchButtonWithLabel,
   AppLoadingButton,
   ButtonWrapper,
   CheckBoxButton,
@@ -28,6 +29,9 @@ export {
   SimpleButton,
   SingleSelectButtonModal,
   SwitchButton,
+  SwitchButtonWithLabel,
+  SwitchSelectorWithAnimation,
   TabButton,
+  ThreeSwitchSelectorWithAnimation,
   ThreeTabButton,
 };
